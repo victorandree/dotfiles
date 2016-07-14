@@ -1,0 +1,88 @@
+# Core dependencies
+brew 'automake'
+brew 'autoconf'
+brew 'cmake'
+brew 'readline'     # Replace libedit which is buggy
+brew 'gdbm'         # Hash database
+brew 'gmp'          # Arbitrary precision arithmetics
+brew 'gettext'      # i18n
+brew 'libevent'
+brew 'libtool'
+brew 'libffi'       # FFI support
+brew 'openssl'
+brew 'pkg-config'
+brew 'pth'          # GNU Portable Threads
+brew 'makedepend'
+brew 'xz'           # Compression
+brew 'libyaml'      # Fast read-write YAML
+
+# Core utilities
+brew 'coreutils'
+brew 'findutils'
+brew 'stow'           # Manage dotfiles
+brew 'fzf'            # Command line fuzzy finder
+brew 'git', args: [
+  'with-pcre',
+  'with-gettext'
+]
+brew 'gnupg2'         # Encryption
+brew 'gpgme'          # Makes GnuPG easier to use
+brew 'sqlite'
+brew 'tmux'
+brew 'tree'
+tap 'neovim/neovim'
+brew 'neovim'
+brew 'wget', args: [
+  'with-pcre',
+  'with-gpgme',
+  'with-iri'
+]
+brew 'zsh'
+brew 'zsh-completions'
+
+# Core languages/VMs
+tap 'homebrew/dupes'
+brew 'tcl-tk', args: ['with-threads']
+brew 'python', args: ['with-tcl-tk']
+brew 'python3', args: ['with-tcl-tk']
+brew 'ruby', args: [
+  'with-doc',
+  'with-gdbm',
+  'with-gmp',
+  'with-libffi'
+]
+brew 'go'
+brew 'node', args: ['with-openssl']
+
+# Misc utilities
+brew 'ansible'            # Deployment automation
+brew 'aspell'             # GNU spell check
+brew 'cdiff'              # Colorized diffing (replaces colordiff)
+brew 'grc'                # Generic Colorizer
+brew 'trash'              # CLI for macOS trash
+brew 'highlight'          # Highlight source code
+
+# Databases
+brew 'postgresql', args: ['devel', '--with-python3']
+
+# Cask
+tap 'caskroom/cask'
+cask 'atom'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'keybase'
+cask 'transmission'
+cask 'vlc'
+
+# Quicklook plugins
+cask 'qlmarkdown'     # Markdown preview with Quicklook
+cask 'qlcolorcode'    # Syntax highlighting for Quicklook
+cask 'quicklook-json' # JSON for Quicklook
+cask 'quicklook-csv'  # CSV display for Quicklook
+cask 'qlstephen'      # Quicklook plaintext without extensions
+
+# Fonts
+tap 'caskroom/fonts'
+cask 'font-fira-code'
+cask 'font-fira-sans'
