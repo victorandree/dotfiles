@@ -2,6 +2,7 @@
 
 # Additional stuff (just pure prompt right now)
 fpath=("$HOME/.config/shell/zsh/functions" $fpath)
+fpath=("$HOME/.config/shell/zsh/plugins/zsh-completions/src" $fpath)
 
 # Initialize completion
 autoload -Uz compinit && compinit
