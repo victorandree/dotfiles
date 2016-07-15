@@ -1,5 +1,8 @@
 # zsh settings
 
+# Additional stuff (just pure prompt right now)
+fpath=("$HOME/.config/shell/zsh/functions" $fpath)
+
 # Initialize completion
 autoload -Uz compinit && compinit
 
@@ -40,3 +43,7 @@ setopt HIST_REDUCE_BLANKS         # Clean up whitespace
 # in. You still have to run fzf's installer and move the .fzf.zsh file to this
 # location yourself (as it is theoretically dependent on where fzf comes from)
 [ -f ~/.config/shell/zsh/fzf.zsh ] && source ~/.config/shell/zsh/fzf.zsh
+
+# Configure and use pure prompt
+autoload -U promptinit && promptinit
+prompt pure
