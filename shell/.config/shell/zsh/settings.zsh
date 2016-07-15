@@ -48,3 +48,6 @@ setopt HIST_REDUCE_BLANKS         # Clean up whitespace
 # Configure and use pure prompt
 autoload -U promptinit && promptinit
 prompt pure
+
+# Configure highlighting (actually sourced at the end of zshrc)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)

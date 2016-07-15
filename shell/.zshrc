@@ -13,3 +13,6 @@ source ~/.config/shell/zsh/settings.zsh
 if [ -f ~/.config/shell/zsh/local_after ]; then
     source ~/.config/shell/zsh/local_after
 fi
+
+# Activate syntax highlighting (must come last)
+source ~/.config/shell/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
