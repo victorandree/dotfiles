@@ -2,7 +2,7 @@
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
 # Atom is main editor on macOS (see also $GIT_EDITOR)
-export EDITOR='atom'
+export EDITOR='atom -nw'
 
 # Parallels just works really well -- most of the time
 export VAGRANT_DEFAULT_PROVIDER=parallels
