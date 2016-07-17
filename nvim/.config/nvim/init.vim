@@ -144,8 +144,8 @@ nnoremap <Leader>cd :lcd %:h<CR>            " cd to dir of buffer
 nnoremap <Leader>md :!mkdir -p %:p:h<CR>    " mkdir dir of buffer
 
 " toggle paste mode and tell us what you went to
-nmap <silent> <F4> <ESC>:set invpaste paste?<CR>
-map <silent> <F4> <ESC><F4>
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " upper/lowercase word
 nmap <Leader>u mQviwU`Q
