@@ -27,6 +27,8 @@ Plug 'tpope/vim-sleuth'                 " autodetect indentations
 Plug 'tpope/vim-unimpaired'             " move around quickly
 Plug 'scrooloose/nerdcommenter'         " easy comments
 Plug 'scrooloose/syntastic'             " linter
+Plug 'vim-airline/vim-airline'          " vim airline
+Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
 
 " Multiple cursors is great but not for vim
@@ -122,6 +124,9 @@ let g:vim_markdown_math=1                   " support math in md (latex)
 
 let g:netrw_dirhistmax = 0                  " disable .netrwhist files
 
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
 " Key bindings
 
 let mapleader=","                           " , is leader key
@@ -139,7 +144,7 @@ nnoremap <Leader>cd :lcd %:h<CR>            " cd to dir of buffer
 nnoremap <Leader>md :!mkdir -p %:p:h<CR>    " mkdir dir of buffer
 
 " toggle paste mode and tell us what you went to
-nmap <silen> <F4> <ESC>:set invpaste paste?<CR>
+nmap <silent> <F4> <ESC>:set invpaste paste?<CR>
 map <silent> <F4> <ESC><F4>
 
 " upper/lowercase word
