@@ -20,6 +20,11 @@ setopt correctall           # help me spell
 # than have the shell behave in one way (see comment in .inputrc).
 bindkey -e
 
+# This will consider only alphanum as word characters, which is useful when
+# dealing with paths.
+autoload -U select-word-style
+select-word-style bash
+
 bindkey '^V' edit-command-line                      # Edit command line
 bindkey '^?' backward-delete-char                   # Backspace
 bindkey '^H' backward-delete-char                   # Backspace
