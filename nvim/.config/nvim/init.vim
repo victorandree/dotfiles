@@ -31,12 +31,18 @@ Plug 'vim-airline/vim-airline'          " vim airline
 Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
 
+set rtp+=/usr/local/opt/fzf
+Plug 'junegunn/fzf.vim'                 " fzf support
+
 " Multiple cursors is great but not for vim
 " See https://goo.gl/VKRkqd for alternatives
 " Plug 'terryma/vim-multiple-cursors'
 
-" A nice autocomplete plugin would be nice
-" YCM is quite heavy to install and perhaps not necessary
+" Autocomplete plugin
+function! DoRemote(arg)
+	UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
