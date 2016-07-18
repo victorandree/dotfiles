@@ -112,8 +112,8 @@ set incsearch                           " show hits immediately
 set gdefault                            " global replace by default
 
 set background=dark
-color solarized                         " use solarized dark
-call togglebg#map("<F2>")               " toggle dark/light with F2
+color base16-paraiso
+" call togglebg#map("<F2>")               " toggle dark/light with F2
 
 " support changing insert cursor in iTerm2
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"

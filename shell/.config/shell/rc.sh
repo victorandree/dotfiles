@@ -52,6 +52,15 @@ if [[ -z $LS_COLORS ]]; then
     eval "$(dircolors ~/.config/dircolors)"
 fi
 
+# True color support for Neovim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+# Color scheme for Terminal
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-paraiso.sh"
+if [ -f $BASE16_SHELL ]; then
+    source $BASE16_SHELL
+fi
+
 # Configure virtualenvwrapper for Python
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
