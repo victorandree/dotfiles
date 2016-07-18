@@ -20,6 +20,7 @@ Plug 'junegunn/limelight.vim'           " dim view outside paragraph
 Plug 'kshenoy/vim-signature'            " marks in gutter
 Plug 'maxbrunsfeld/vim-emacs-bindings'  " very useful sometimes
 Plug 'mbbill/undotree'                  " :UndotreeToggle
+Plug 'michaeljsmith/vim-indent-object'  " indentation text objects (i and l)
 Plug 'moll/vim-bbye'                    " :Bdelete = :bd w/o CTRL-W_c
 Plug 'tpope/vim-repeat'                 " . support for plugins
 Plug 'tpope/vim-surround'               " cs]) and friends
@@ -104,6 +105,7 @@ set expandtab                           " tabs are spaces
 set shiftwidth=4
 set tabstop=4
 set autoindent                          " continue indentation
+set formatoptions=jcroqln1              " auto list format/dont break 1chr wrd
 
 set hlsearch                            " highlight search results
 set ignorecase                          " ignore case when searching
@@ -132,6 +134,8 @@ let g:netrw_dirhistmax = 0                  " disable .netrwhist files
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
+let NERDSpaceDelims=1						" spaces around comment delims
 
 " Key bindings
 
