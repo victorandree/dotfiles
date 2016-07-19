@@ -31,6 +31,7 @@ Plug 'scrooloose/syntastic'             " linter
 Plug 'vim-airline/vim-airline'          " vim airline
 Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
+Plug 'chaoren/vim-wordmotion'           " CCase text objects
 
 set rtp+=/usr/local/opt/fzf
 Plug 'junegunn/fzf.vim'                 " fzf support
@@ -141,6 +142,9 @@ let NERDSpaceDelims=1						" spaces around comment delims
 
 let mapleader=","                           " , is leader key
 let maplocalleader=","
+
+" ,w and friends for _ and CamelCase motions
+let g:wordmotion_prefix = '<Leader>'
 
 " visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :call VisualSelection('f')<CR>
