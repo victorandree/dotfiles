@@ -19,12 +19,14 @@ Plug 'junegunn/goyo.vim'                " distraction free editing
 Plug 'junegunn/limelight.vim'           " dim view outside paragraph
 Plug 'kshenoy/vim-signature'            " marks in gutter
 Plug 'maxbrunsfeld/vim-emacs-bindings'  " very useful sometimes
+Plug 'mattn/calendar-vim'               " calendar view (org-mode)
 Plug 'mbbill/undotree'                  " :UndotreeToggle
 Plug 'michaeljsmith/vim-indent-object'  " indentation text objects (i and l)
 Plug 'moll/vim-bbye'                    " :Bdelete = :bd w/o CTRL-W_c
 Plug 'tpope/vim-repeat'                 " . support for plugins
 Plug 'tpope/vim-surround'               " cs]) and friends
 Plug 'tpope/vim-sleuth'                 " autodetect indentations
+Plug 'tpope/vim-speeddating'            " Inc/dec dates w CTRL+A/X
 Plug 'tpope/vim-unimpaired'             " move around quickly
 Plug 'scrooloose/nerdcommenter'         " easy comments
 Plug 'scrooloose/syntastic'             " linter
@@ -54,9 +56,11 @@ Plug 'pangloss/vim-javascript'          " vastly improved js
 Plug 'chase/vim-ansible-yaml'           " ansible yaml
 Plug 'JuliaLang/julia-vim'              " Julia support
 Plug 'jmcantrell/vim-virtualenv'        " py virtualenv support
+Plug 'keith/tmux.vim'					" tmux syntax hilite
 Plug 'chrisbra/csv.vim'                 " CSV editing support
 Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'digitaltoad/vim-pug'              " Pug (Jade) support
+Plug 'jceb/vim-orgmode'					" Org mode for vim
 
 " These might be relevant for Clojure editing
 " Plug 'tpope/vim-leiningen.git'
@@ -106,7 +110,13 @@ set expandtab                           " tabs are spaces
 set shiftwidth=4
 set tabstop=4
 set autoindent                          " continue indentation
-set formatoptions=jcroqln1              " auto list format/dont break 1chr wrd
+
+set formatoptions=
+set formatoptions+=jroq					" apply formatting to comments
+set formatoptions+=tc					" wrap lines at textwidth
+set formatoptions+=n					" wrap list indent correctly
+set formatoptions+=l					" dont reformat already too long lines
+set formatoptions+=1					" put one-letter word on new lines
 
 set hlsearch                            " highlight search results
 set ignorecase                          " ignore case when searching
