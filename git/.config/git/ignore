@@ -12,6 +12,7 @@
 ##########################
 *.swp
 *~
+.vscode
 
 # Logs and databases #
 ######################
@@ -31,3 +32,4 @@ Thumbs.db
 
 .ipynb_checkpoints/
 ~$*.xlsx
+.com.apple.timemachine.supported
