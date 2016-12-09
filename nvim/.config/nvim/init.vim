@@ -125,6 +125,10 @@ set incsearch                           " show hits immediately
 set gdefault                            " global replace by default
 
 set background=dark
+function! s:base16ParaisoAdjust()
+    hi org_shade_stars guifg=#2f1e2e
+endfunction
+autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
 color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
 
@@ -148,6 +152,9 @@ let g:airline_right_sep=''
 
 let NERDSpaceDelims=1						" spaces around comment delims
 
+let g:org_heading_shade_leading_stars = 1   " dont show leading stars in orgA
+let g:org_indent = 1
+
 " Key bindings
 
 let mapleader=","                           " , is leader key
@@ -170,6 +177,10 @@ nnoremap <Leader>md :!mkdir -p %:p:h<CR>    " mkdir dir of buffer
 " toggle paste mode and tell us what you went to
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " upper/lowercase word
 nmap <Leader>u mQviwU`Q
