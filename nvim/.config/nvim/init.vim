@@ -34,6 +34,8 @@ Plug 'vim-airline/vim-airline'          " vim airline
 Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
 Plug 'chaoren/vim-wordmotion'           " CCase text objects
+Plug 'kylef/apiblueprint.vim'		" API Blueprint
+Plug 'jdkanani/vim-material-theme'      " Material design
 
 set rtp+=/usr/local/opt/fzf
 Plug 'junegunn/fzf.vim'                 " fzf support
@@ -125,12 +127,13 @@ set incsearch                           " show hits immediately
 set gdefault                            " global replace by default
 
 set background=dark
-function! s:base16ParaisoAdjust()
-    hi org_shade_stars guifg=#2f1e2e
-endfunction
-autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
-color base16-paraiso
+" function! s:base16ParaisoAdjust()
+"     hi org_shade_stars guifg=#2f1e2e
+" endfunction
+" autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
+" color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
+color material-theme
 
 " support changing insert cursor in iTerm2
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
