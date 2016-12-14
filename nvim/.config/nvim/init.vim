@@ -52,6 +52,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 " Language plugins
 Plug 'pangloss/vim-javascript'          " vastly improved js
@@ -133,7 +134,8 @@ set background=dark
 " autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
 " color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
-color material-theme
+set termguicolors
+colorscheme gruvbox
 
 " support changing insert cursor in iTerm2
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
