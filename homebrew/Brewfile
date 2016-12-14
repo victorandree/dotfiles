@@ -63,7 +63,7 @@ brew 'trash'              # CLI for macOS trash
 brew 'highlight'          # Highlight source code
 
 # Databases
-brew 'postgresql', args: ['devel', '--with-python3']
+brew 'postgresql', args: ['--with-python3']
 
 # Cask
 tap 'caskroom/cask'
@@ -86,3 +86,4 @@ cask 'qlstephen'      # Quicklook plaintext without extensions
 tap 'caskroom/fonts'
 cask 'font-fira-code'
 cask 'font-fira-sans'
+cask 'font-source-code-pro'
