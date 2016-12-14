@@ -194,3 +194,5 @@ nmap <Leader>l mQviwu`Q
 " upper/lowercase first char of word
 nmap <Leader>U mQgewvU`Q
 nmap <Leader>L mQgewvu`Q
+
+map <c-p> :FZF<CR>
