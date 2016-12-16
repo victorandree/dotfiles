@@ -7,6 +7,9 @@ export GIT_EDITOR='nvim'    # but nvim is really good for Git commit messages
 # Parallels just works really well -- most of the time
 export VAGRANT_DEFAULT_PROVIDER=parallels
 
+# Enable cursor switching in iTerm
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 # BYOBU is a tmux/screen drop-in replacement
 export BYOBU_PREFIX=$(brew --prefix)
 

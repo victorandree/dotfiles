@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'        " really good vim motions
 Plug 'editorconfig/editorconfig-vim'    " cross-editor configuration
 Plug 'godlygeek/tabular'                " align stuff with :Tab /=
 Plug 'junegunn/goyo.vim'                " distraction free editing
+Plug 'amix/vim-zenroom2'                " zenroom enhancements
 Plug 'junegunn/limelight.vim'           " dim view outside paragraph
 Plug 'kshenoy/vim-signature'            " marks in gutter
 Plug 'maxbrunsfeld/vim-emacs-bindings'  " very useful sometimes
@@ -137,6 +138,10 @@ set background=dark
 set termguicolors
 colorscheme gruvbox
 
+" distraction free but not that distraction free
+let g:goyo_height = '95%'
+let g:goyo_linenr = 1
+
 " support changing insert cursor in iTerm2
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -195,4 +200,5 @@ nmap <Leader>l mQviwu`Q
 nmap <Leader>U mQgewvU`Q
 nmap <Leader>L mQgewvu`Q
 
-map <c-p> :FZF<CR>
+map <silent> <c-p> :FZF<CR>
+nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
