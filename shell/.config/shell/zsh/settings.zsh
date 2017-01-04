@@ -12,7 +12,7 @@ autoload -U edit-command-line && zle -N edit-command-line
 
 setopt autocd               # dirname without 'cd'
 setopt interactivecomments  # use `#` on command line
-setopt correctall           # help me spell
+setopt correct              # help me spell
 
 # Configure zle (http://zsh.sourceforge.net/Guide/zshguide04.html)
 # emacs style editing -- vim is nice and for zsh we could use triggers to change
