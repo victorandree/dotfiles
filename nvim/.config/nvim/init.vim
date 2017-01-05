@@ -54,6 +54,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 " Language plugins
 Plug 'pangloss/vim-javascript'          " vastly improved js
@@ -88,6 +89,10 @@ set completeopt=menu,preview,longest    " sane completion options
 set backspace=eol,start,indent          " sane backspace
 set cursorline                          " highlight current line
 set switchbuf=usetab                    " reuse windows when opening buffers
+set clipboard=unnamed                   " use system clipboard default
+
+" display invisible characters using :set list
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 set wildmode=longest:full               " complete to longest common string
 
@@ -129,14 +134,15 @@ set incsearch                           " show hits immediately
 set gdefault                            " global replace by default
 
 set background=dark
+set termguicolors
+colorscheme nord
+
 " function! s:base16ParaisoAdjust()
 "     hi org_shade_stars guifg=#2f1e2e
 " endfunction
 " autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
 " color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
-set termguicolors
-colorscheme gruvbox
 
 " distraction free but not that distraction free
 let g:goyo_height = '95%'
