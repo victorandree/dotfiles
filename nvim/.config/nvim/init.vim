@@ -98,10 +98,15 @@ set completeopt=menu,preview,longest    " sane completion options
 set backspace=eol,start,indent          " sane backspace
 set cursorline                          " highlight current line
 set switchbuf=usetab                    " reuse windows when opening buffers
-set clipboard=unnamed                   " use system clipboard default
+" set clipboard=unnamed                   " use system clipboard default
 
 " display invisible characters using :set list
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+nnoremap <Leader>8 "*
+
+" toggle paste mode and tell us what you went to
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 set wildmode=longest:full               " complete to longest common string
 
