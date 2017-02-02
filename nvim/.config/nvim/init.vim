@@ -171,6 +171,10 @@ let g:goyo_linenr = 1
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" deoplete / autocomplete
+let g:deoplete#enable_at_startup = 1
+
+
 " automatically lint stuff
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
