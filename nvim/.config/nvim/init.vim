@@ -187,8 +187,9 @@ let g:airline_right_sep=''
 
 let NERDSpaceDelims=1						" spaces around comment delims
 
-let g:org_heading_shade_leading_stars = 1   " dont show leading stars in orgA
+let g:org_heading_shade_leading_stars = 1   " dont show leading stars in org
 let g:org_indent = 1
+autocmd BufNewFile,BufRead *.org setlocal ts=2 sw=2 sts=2 expandtab
 
 au FileType qf setlocal nonumber colorcolumn=
 
