@@ -16,6 +16,9 @@ brew 'makedepend'
 brew 'xz'           # Compression
 brew 'libyaml'      # Fast read-write YAML
 
+# E-mail
+brew 'isync'
+
 # Core utilities
 brew 'coreutils'
 brew 'findutils'
