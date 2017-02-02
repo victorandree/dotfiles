@@ -240,3 +240,6 @@ nmap <Leader>L mQgewvu`Q
 
 map <silent> <c-p> :FZF<CR>
 nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
+
+" quickly open config vim
+nmap <Leader>fed :e $MYVIMRC<CR>
