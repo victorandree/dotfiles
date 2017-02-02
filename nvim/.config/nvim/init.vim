@@ -29,14 +29,18 @@ Plug 'tpope/vim-surround'               " cs]) and friends
 Plug 'tpope/vim-sleuth'                 " autodetect indentations
 Plug 'tpope/vim-speeddating'            " Inc/dec dates w CTRL+A/X
 Plug 'tpope/vim-unimpaired'             " move around quickly
+Plug 'sjbach/lusty'                     " change buffers nicely
 Plug 'scrooloose/nerdcommenter'         " easy comments
 Plug 'scrooloose/syntastic'             " linter
 Plug 'vim-airline/vim-airline'          " vim airline
 Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
 Plug 'chaoren/vim-wordmotion'           " CCase text objects
-Plug 'kylef/apiblueprint.vim'		" API Blueprint
+Plug 'kylef/apiblueprint.vim'           " API Blueprint
 Plug 'jdkanani/vim-material-theme'      " Material design
+Plug 'Shougo/vimproc.vim'               " Required for Typescript
+Plug 'Chiel92/vim-autoformat'           " Formatting
+Plug 'mhinz/vim-startify'               " Fancy start screen
 
 set rtp+=/usr/local/opt/fzf
 Plug 'junegunn/fzf.vim'                 " fzf support
@@ -47,7 +51,7 @@ Plug 'junegunn/fzf.vim'                 " fzf support
 
 " Autocomplete plugin
 function! DoRemote(arg)
-	UpdateRemotePlugins
+  UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
@@ -66,6 +70,11 @@ Plug 'chrisbra/csv.vim'                 " CSV editing support
 Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'digitaltoad/vim-pug'              " Pug (Jade) support
 Plug 'jceb/vim-orgmode'					" Org mode for vim
+Plug 'vim-scripts/utl.vim'              " Links (needed by Org)
+Plug 'leafgarland/typescript-vim'       " Typescript syntax
+Plug 'Quramy/tsuquyomi'                 " Typescript support
+Plug 'Quramy/vim-js-pretty-template'    " Pretty template strings
+Plug 'fleischie/vim-styled-components'  " Styled components support
 
 " These might be relevant for Clojure editing
 " Plug 'tpope/vim-leiningen.git'
@@ -170,6 +179,11 @@ let NERDSpaceDelims=1						" spaces around comment delims
 
 let g:org_heading_shade_leading_stars = 1   " dont show leading stars in orgA
 let g:org_indent = 1
+
+" typescript show signatures
+let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 " Key bindings
 
