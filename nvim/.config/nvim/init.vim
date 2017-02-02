@@ -108,6 +108,9 @@ nnoremap <Leader>8 "*
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+
 set wildmode=longest:full               " complete to longest common string
 
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -158,6 +161,8 @@ colorscheme nord
 " color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
 
+hi QuickFixLine guibg=#bf616a guifg=#d8dee9
+
 " distraction free but not that distraction free
 let g:goyo_height = '95%'
 let g:goyo_linenr = 1
@@ -184,6 +189,8 @@ let NERDSpaceDelims=1						" spaces around comment delims
 
 let g:org_heading_shade_leading_stars = 1   " dont show leading stars in orgA
 let g:org_indent = 1
+
+au FileType qf setlocal nonumber colorcolumn=
 
 " typescript show signatures
 let g:tsuquyomi_completion_detail = 1
