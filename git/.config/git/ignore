@@ -33,3 +33,5 @@ Thumbs.db
 .ipynb_checkpoints/
 ~$*.xlsx
 .com.apple.timemachine.supported
+
+.idea
