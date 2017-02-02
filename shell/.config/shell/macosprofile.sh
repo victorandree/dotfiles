@@ -1,7 +1,7 @@
 # macOS specific login shell configuration (environment setup)
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
-export EDITOR='atom -nw'    # Atom as main editor on macOS
+export EDITOR='nvim'        # Atom as main editor on macOS
 export GIT_EDITOR='nvim'    # but nvim is really good for Git commit messages
 
 # Parallels just works really well -- most of the time
