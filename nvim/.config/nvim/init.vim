@@ -177,9 +177,10 @@ let g:deoplete#enable_at_startup = 1
 
 " automatically lint stuff
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
 
 let g:vim_markdown_frontmatter=1            " hilite markdown frontmatter
 let g:vim_markdown_math=1                   " support math in md (latex)
