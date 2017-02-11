@@ -42,8 +42,8 @@ Plug 'Shougo/vimproc.vim'               " Required for Typescript
 Plug 'Chiel92/vim-autoformat'           " Formatting
 Plug 'mhinz/vim-startify'               " Fancy start screen
 
-set rtp+=/usr/local/opt/fzf
-Plug 'junegunn/fzf.vim'                 " fzf support
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 " Multiple cursors is great but not for vim
 " See https://goo.gl/VKRkqd for alternatives
@@ -121,6 +121,11 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 set wildignore+=*/bower_components/*,*/node_modules/*
 set wildignore+=*.swp,*~,._*
 set wildignore+=*/target/*
+
+" File searching with ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 set nobackup                            " disable back-up
 set nowb                                " disable back-up
@@ -238,7 +243,6 @@ nmap <Leader>l mQviwu`Q
 nmap <Leader>U mQgewvU`Q
 nmap <Leader>L mQgewvu`Q
 
-map <silent> <c-p> :FZF<CR>
 nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 
 " quickly open config vim

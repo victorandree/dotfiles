@@ -24,6 +24,7 @@ brew 'coreutils'
 brew 'findutils'
 brew 'stow'           # Manage dotfiles
 brew 'fzf'            # Command line fuzzy finder
+brew 'the_silver_searcher' # Code search
 brew 'git', args: [
   'with-pcre',
   'with-gettext'
