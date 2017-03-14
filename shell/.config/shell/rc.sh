@@ -12,6 +12,8 @@ command -v gls >/dev/null 2>&1 && {
   alias dircolors='gdircolors'
 }
 
+alias uuid="python3 -c 'import sys,uuid; sys.stdout.write(str(uuid.uuid4()))'"
+
 alias less='less --ignore-case'
 
 alias cp='cp -i'        # Ask for confirmation before overwriting
