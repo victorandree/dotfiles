@@ -40,7 +40,8 @@ if [ ! -f $HISTFILE ]; then
   touch $HISTFILE
 fi
 
-setopt INC_APPEND_HISTORY         # Append to history straightaway
+# setopt SHARE_HISTORY              # Don't know what this does
+setopt APPEND_HISTORY             # Append history when exit
 setopt EXTENDED_HISTORY           # Save date and execution time in history
 setopt HIST_IGNORE_DUPS           # Don't add duplicates to history
 setopt HIST_REDUCE_BLANKS         # Clean up whitespace
