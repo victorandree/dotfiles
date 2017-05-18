@@ -13,6 +13,8 @@ export EDITOR='vim'       # The power of vim
 
 export MYSQL_HISTFILE="${HOME}/.local/mysql_history"
 
+export LEIN_FAST_TRAMPOLINE=1
+
 if [ -f ~/.config/shell/macosprofile.sh ]; then
     source ~/.config/shell/macosprofile.sh
 fi

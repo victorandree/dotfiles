@@ -13,6 +13,7 @@
 *.swp
 *~
 .vscode
+.#*
 
 # Logs and databases #
 ######################
@@ -35,3 +36,4 @@ Thumbs.db
 .com.apple.timemachine.supported
 
 .idea
+.env

@@ -77,13 +77,13 @@ Plug 'Quramy/vim-js-pretty-template'    " Pretty template strings
 Plug 'fleischie/vim-styled-components'  " Styled components support
 
 " These might be relevant for Clojure editing
-" Plug 'tpope/vim-leiningen.git'
-" Plug 'tpope/vim-projectionist.git'
-" Plug 'tpope/vim-dispatch.git'
-" Plug 'tpope/vim-fireplace.git'
-" Plug 'guns/vim-clojure-highlight'
-" Plug 'venantius/vim-cljfmt'
-" Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-leiningen'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-highlight'
+Plug 'venantius/vim-cljfmt'
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -160,7 +160,7 @@ set termguicolors
 colorscheme nord
 
 " function! s:base16ParaisoAdjust()
-"     hi org_shade_stars guifg=#2f1e2e
+    " hi org_shade_stars guifg=#2f1e2e
 " endfunction
 " autocmd ColorScheme base16-paraiso call s:base16ParaisoAdjust()
 " color base16-paraiso
@@ -178,7 +178,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " deoplete / autocomplete
 let g:deoplete#enable_at_startup = 1
-
 
 " automatically lint stuff
 let g:syntastic_always_populate_loc_list = 1
@@ -208,10 +207,13 @@ let g:tsuquyomi_completion_detail = 1
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
+" Clojure
+let g:paredit_electric_return = 0
+
 " Key bindings
 
-let mapleader=","                           " , is leader key
-let maplocalleader=","
+let mapleader=" "                           " , is leader key
+let maplocalleader=" "
 
 " ,w and friends for _ and CamelCase motions
 let g:wordmotion_prefix = '<Leader>'
