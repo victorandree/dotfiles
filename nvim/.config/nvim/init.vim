@@ -8,7 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'          " NERDTree fork
 
 Plug 'tpope/vim-fugitive'               " git wrapper
-Plug 'airblade/vim-gitgutter'           " git status gutter
+" Plug 'airblade/vim-gitgutter'           " git status gutter
 Plug 'Xuyuanp/nerdtree-git-plugin'      " git status in NERDTree
 
 Plug 'christoomey/vim-tmux-navigator'   " easily move between tmux/vim
@@ -212,7 +212,7 @@ let g:paredit_electric_return = 0
 
 " Key bindings
 
-let mapleader=" "                           " , is leader key
+let mapleader=" "                           " space is leader key
 let maplocalleader=" "
 
 " ,w and friends for _ and CamelCase motions
