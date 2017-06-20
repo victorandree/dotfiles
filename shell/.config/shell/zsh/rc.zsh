@@ -1,4 +1,5 @@
 # zsh settings
+source $HOME/.config/shell/rc.sh
 
 # Additional stuff (just pure prompt right now)
 fpath=("$HOME/.config/shell/zsh/functions" $fpath)
@@ -15,9 +16,7 @@ setopt interactivecomments  # use `#` on command line
 setopt correct              # help me spell
 
 # Configure zle (http://zsh.sourceforge.net/Guide/zshguide04.html)
-# emacs style editing -- vim is nice and for zsh we could use triggers to change
-# the cursor in iTerm2, however, it's better to be consistent across programs
-# than have the shell behave in one way (see comment in .inputrc).
+# Use emacs style editing. Vim mode is too slow!
 bindkey -e
 
 # This will consider only alphanum as word characters, which is useful when
@@ -25,26 +24,41 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
-bindkey '^V' edit-command-line                      # Edit command line
+bindkey '^V' edit-command-line                      # Edit in editor
 bindkey '^?' backward-delete-char                   # Backspace
 bindkey '^H' backward-delete-char                   # Backspace
 bindkey '^[[3~' delete-char                         # Delete
 bindkey "^R" history-incremental-search-backward    # Incremental history search
 
-# Configure history
-HISTSIZE=100000                   # Large history
+# Large history that gets saved in ~/.zsh_history
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
-HISTFILE=~/.local/zsh_history     # Out of sight, out of mind
-if [ ! -f $HISTFILE ]; then
-  mkdir -p $(dirname $HISTFILE)
-  touch $HISTFILE
-fi
+HISTFILE=$HOME/.zsh_history
 
-# setopt SHARE_HISTORY              # Don't know what this does
-setopt APPEND_HISTORY             # Append history when exit
-setopt EXTENDED_HISTORY           # Save date and execution time in history
-setopt HIST_IGNORE_DUPS           # Don't add duplicates to history
-setopt HIST_REDUCE_BLANKS         # Clean up whitespace
+# INC_APPEND_HISTORY means that instead of doing this when the shell exits,
+# each line is added to the history in this way as it is executed; this means,
+# for example, that if you start up a zsh inside the main shell its history
+# will look like that of the main shell, which is quite useful. It also means
+# the ordering of commands from different shells running at the same time is
+# much more logical --- basically just the order they were executed --- 
+# so for 3.1.6 and higher this option is recommended.
+setopt INC_APPEND_HISTORY
+
+# Append from other shells in this shell's history. Does not affect ! history
+setopt SHARE_HISTORY
+
+# Save data and time in history. history -d prints time, -f prints date.
+setopt EXTENDED_HISTORY
+
+# Don't add repeated duplicates to history. Still saves duplicates that
+# happen not in sequence.
+setopt HIST_IGNORE_DUPS
+
+# Cleans up whitespace
+setopt HIST_REDUCE_BLANKS
+
+# Don't save commands starting with space in history (privacy!)
+setopt HIST_IGNORE_SPACE
 
 # fzf support if we have it. Note the non-standard directory that this is placed
 # in. You still have to run fzf's installer and move the .fzf.zsh file to this
@@ -57,3 +71,5 @@ prompt pure
 
 # Configure highlighting (actually sourced at the end of zshrc)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
+source ~/.config/shell/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

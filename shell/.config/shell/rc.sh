@@ -1,4 +1,4 @@
-# Common interactive shell configurations
+# Interactive shell configuration (for any shell)
 
 # Aliases
 alias grep='grep --color'                       # Use color with grep
@@ -40,13 +40,8 @@ command -v highlight >/dev/null 2>&1 && {
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
 export LESS_TERMCAP_me=$'\e[0m'           # end mode
-# export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
-# export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 export LESS_TERMCAP_ue=$'\e[0m'           # end underline
-
-# Don’t clear the screen after quitting a manual page
-# export MANPAGER="less -X"
 
 # Configure $LS_COLORS with dircolors if needed (note dircolors might not be
 # available on all systems).
@@ -54,26 +49,26 @@ if [[ -z $LS_COLORS ]]; then
     eval "$(dircolors ~/.config/dircolors)"
 fi
 
+# Activate generic colorizer if available
+# if [ -f $(brew --prefix)/etc/grc.bashrc ]; then
+#     . $(brew --prefix)/etc/grc.bashrc
+# fi
+
 # True color support for Neovim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-# Color scheme for Terminal
-# BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-paraiso.sh"
-# if [ -f $BASE16_SHELL ]; then
-#     source $BASE16_SHELL
-# fi
-
+# This takes just a little bit too much time!! Use modern techniques
+# instead.
 # Configure virtualenvwrapper for Python
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-alias v='workon'
-alias v.deactivate='deactivate'
-alias v.mk='mkvirtualenv --no-site-packages'
-alias v.mk_withsitepackages='mkvirtualenv'
-alias v.rm='rmvirtualenv'
-alias v.add2virtualenv='add2virtualenv'
-alias v.cdsitepackages='cdsitepackages'
-alias v.cd='cdvirtualenv'
-alias v.lssitepackages='lssitepackages'
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#     source /usr/local/bin/virtualenvwrapper.sh
+# fi
+# alias v='workon'
+# alias v.deactivate='deactivate'
+# alias v.mk='mkvirtualenv --no-site-packages'
+# alias v.mk_withsitepackages='mkvirtualenv'
+# alias v.rm='rmvirtualenv'
+# alias v.add2virtualenv='add2virtualenv'
+# alias v.cdsitepackages='cdsitepackages'
+# alias v.cd='cdvirtualenv'
+# alias v.lssitepackages='lssitepackages'
