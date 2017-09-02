@@ -58,7 +58,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
 # Don't save commands starting with space in history (privacy!)
-setopt HIST_IGNORE_SPACE
+setopt histignorespace
 
 # fzf support if we have it. Note the non-standard directory that this is placed
 # in. You still have to run fzf's installer and move the .fzf.zsh file to this
