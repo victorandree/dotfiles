@@ -75,7 +75,7 @@
   keepBackup = false
 
 [push]
-  default = upstream
+  default = current
 
 [credential]
   helper = cache --timeout=3600
@@ -94,8 +94,6 @@
   whitespace = fix
 [branch]
   autosetupmerge = true
-[push]
-  default = tracking
 
 [color "branch"]
   current = yellow reverse
