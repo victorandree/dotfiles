@@ -8,7 +8,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-vinegar'          " NERDTree fork
 
 Plug 'tpope/vim-fugitive'               " git wrapper
-" Plug 'airblade/vim-gitgutter'           " git status gutter
 Plug 'Xuyuanp/nerdtree-git-plugin'      " git status in NERDTree
 
 Plug 'christoomey/vim-tmux-navigator'   " easily move between tmux/vim
@@ -32,15 +31,13 @@ Plug 'tpope/vim-unimpaired'             " move around quickly
 Plug 'sjbach/lusty'                     " change buffers nicely
 Plug 'scrooloose/nerdcommenter'         " easy comments
 Plug 'scrooloose/syntastic'             " linter
-Plug 'vim-airline/vim-airline'          " vim airline
-Plug 'vim-airline/vim-airline-themes'   " with themes
+" Plug 'vim-airline/vim-airline'          " vim airline
+" Plug 'vim-airline/vim-airline-themes'   " with themes
 Plug 'vim-scripts/paredit.vim'          " paredit
 Plug 'chaoren/vim-wordmotion'           " CCase text objects
-Plug 'kylef/apiblueprint.vim'           " API Blueprint
-Plug 'jdkanani/vim-material-theme'      " Material design
-Plug 'Shougo/vimproc.vim'               " Required for Typescript
+" Plug 'Shougo/vimproc.vim'               " Required for Typescript
 Plug 'Chiel92/vim-autoformat'           " Formatting
-Plug 'mhinz/vim-startify'               " Fancy start screen
+" Plug 'mhinz/vim-startify'               " Fancy start screen
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
@@ -50,44 +47,44 @@ Plug 'mileszs/ack.vim'
 " Plug 'terryma/vim-multiple-cursors'
 
 " Autocomplete plugin
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" function! DoRemote(arg)
+"   UpdateRemotePlugins
+" endfunction
+" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
+" Plug 'arcticicestudio/nord-vim'
 
 " Language plugins
 Plug 'pangloss/vim-javascript'          " vastly improved js
-Plug 'chase/vim-ansible-yaml'           " ansible yaml
+" Plug 'chase/vim-ansible-yaml'           " ansible yaml
 Plug 'JuliaLang/julia-vim'              " Julia support
 Plug 'jmcantrell/vim-virtualenv'        " py virtualenv support
 Plug 'keith/tmux.vim'					" tmux syntax hilite
 Plug 'chrisbra/csv.vim'                 " CSV editing support
 Plug 'plasticboy/vim-markdown'          " Markdown support
-Plug 'digitaltoad/vim-pug'              " Pug (Jade) support
+" Plug 'digitaltoad/vim-pug'              " Pug (Jade) support
 Plug 'jceb/vim-orgmode'					" Org mode for vim
 Plug 'vim-scripts/utl.vim'              " Links (needed by Org)
-Plug 'leafgarland/typescript-vim'       " Typescript syntax
-Plug 'Quramy/tsuquyomi'                 " Typescript support
+" Plug 'leafgarland/typescript-vim'       " Typescript syntax
+" Plug 'Quramy/tsuquyomi'                 " Typescript support
 Plug 'Quramy/vim-js-pretty-template'    " Pretty template strings
 Plug 'fleischie/vim-styled-components'  " Styled components support
 
 " These might be relevant for Clojure editing
-Plug 'tpope/vim-leiningen'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-clojure-highlight'
-Plug 'venantius/vim-cljfmt'
-Plug 'luochen1990/rainbow'
+" Plug 'tpope/vim-leiningen'
+" Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-fireplace'
+" Plug 'guns/vim-clojure-highlight'
+" Plug 'venantius/vim-cljfmt'
+" Plug 'luochen1990/rainbow'
 
 call plug#end()
 
-syntax enable                           " enable syntax hilite
 set title                               " set title of window
 set fileformats=unix,dos,mac            " <EOL> detection/handling
 set number                              " show line numbers
@@ -155,9 +152,18 @@ set smartcase                           " ...only when all lowercase
 set incsearch                           " show hits immediately
 set gdefault                            " global replace by default
 
-set background=dark
-set termguicolors
-colorscheme nord
+" THEME CONFIGURATION
+" set background=dark
+" set termguicolors
+" colorscheme nord
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
+endif
+syntax enable                           " enable syntax hilite
+colorscheme onedark
 
 " function! s:base16ParaisoAdjust()
     " hi org_shade_stars guifg=#2f1e2e
@@ -166,7 +172,7 @@ colorscheme nord
 " color base16-paraiso
 " call togglebg#map("<F2>")               " toggle dark/light with F2
 
-hi QuickFixLine guibg=#bf616a guifg=#d8dee9
+" hi QuickFixLine guibg=#bf616a guifg=#d8dee9
 
 " distraction free but not that distraction free
 let g:goyo_height = '95%'
@@ -177,7 +183,7 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " deoplete / autocomplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " automatically lint stuff
 let g:syntastic_always_populate_loc_list = 1
@@ -208,7 +214,7 @@ let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 " Clojure
-let g:paredit_electric_return = 0
+" let g:paredit_electric_return = 0
 
 " Key bindings
 
