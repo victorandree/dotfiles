@@ -28,6 +28,13 @@ command -v nvim >/dev/null 2>&1 && {
   alias vim='nvim'
 }
 
+# Play music from YouTube with mpv
+function mm() {
+  command -v mpv >/dev/null 2>&1 && {
+    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+  }
+}
+
 # Use Andre Simon's highlight with less if available
 command -v highlight >/dev/null 2>&1 && {
   export LESSOPEN="| $(command -v highlight) %s --out-format ansi --line-numbers --quiet --force"
