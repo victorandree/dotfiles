@@ -127,7 +127,11 @@
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 
+[user]
+  email = hello@victorandree.se
+  name = Victor Andrée
+
 [include]
   path = ~/.config/git/local
 [fetch]
-	recurseSubmodules = false
+  recurseSubmodules = false
