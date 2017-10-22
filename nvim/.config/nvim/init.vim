@@ -156,12 +156,12 @@ set gdefault                            " global replace by default
 " set background=dark
 " set termguicolors
 " colorscheme nord
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("nvim"))
+"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" endif
+"if (has("termguicolors"))
+"  set termguicolors
+" endif
 syntax enable                           " enable syntax hilite
 colorscheme onedark
 
