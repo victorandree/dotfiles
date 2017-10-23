@@ -5,7 +5,7 @@ Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
 Xft.autohint: false
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
 URxvt.scrollBar: false
@@ -17,14 +17,3 @@ URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
-rofi.color-enabled: true
-rofi.color-window: #141021, #c16772, #9568a1
-rofi.color-normal: #141021, #ffeefc, #312842, #c16772, #ffeefc
-rofi.color-active: #141021, #c05c47, #312842, #c05c47, #ffeefc
-rofi.color-urgent: #141021, #e4b226, #312842, #e4b226, #ffeefc
-rofi.width: 800
-rofi.padding: 50
-rofi.font: Iosevka 18
-rofi.bw: 3
-rofi.separator-style: solid
-rofi.hide-scrollbar: true
