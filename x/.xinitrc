@@ -26,5 +26,6 @@ setxkbmap -layout us -variant mac \
     -option lv3:ralt_alt \
     -option lv3:lalt_switch
 
+compton -b
 exec i3
 
