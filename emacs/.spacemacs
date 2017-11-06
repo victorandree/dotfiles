@@ -366,6 +366,8 @@ you should place your code here."
   ;; Default org directory
   (setq org-directory "~/Dropbox/Documents/org")
 
+  (setq org-agenda-files '("~/Dropbox/Documents/org/agenda"))
+
   ;; Quick capture of org notes
   (setq org-default-notes-file (concat org-directory "/notes.org"))
 
