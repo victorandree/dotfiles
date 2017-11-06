@@ -45,7 +45,7 @@ HISTFILE=$HOME/.zsh_history
 setopt INC_APPEND_HISTORY
 
 # Append from other shells in this shell's history. Does not affect ! history
-setopt SHARE_HISTORY
+# setopt SHARE_HISTORY
 
 # Save data and time in history. history -d prints time, -f prints date.
 setopt EXTENDED_HISTORY
