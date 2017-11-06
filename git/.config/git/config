@@ -76,6 +76,7 @@
 
 [push]
   default = current
+	followTags = true
 
 [credential]
   helper = cache --timeout=3600
