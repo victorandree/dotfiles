@@ -2,11 +2,13 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-set runtimepath+=/Users/victor/.local/share/dein/repos/github.com/Shougo/dein.vim
+" Follow installation instructions at https://github.com/Shougo/dein.vim
+" Install to ~/.local/share/dein
+set runtimepath+=$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/victor/.local/share/dein')
-  call dein#begin('/Users/victor/.local/share/dein')
-  call dein#add('/Users/victor/.local/share/dein/repos/github.com/Shougo/dein.vim')
+if dein#load_state('$HOME/.local/share/dein')
+  call dein#begin('$HOME/.local/share/dein')
+  call dein#add('$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('jiangmiao/auto-pairs')             " paired brackets
   call dein#add('tpope/vim-fugitive')               " git wrapper
