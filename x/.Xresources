@@ -1,4 +1,4 @@
-*.font: xft:Iosevka:pixelsize=13
+*.font: xft:Iosevka:pixelsize=12
 
 Xft.dpi: 96
 Xft.antialias: true
