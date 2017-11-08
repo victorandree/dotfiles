@@ -105,6 +105,9 @@ prompt_pure_preprompt_render() {
 	local git_color=242
 	[[ -n ${prompt_pure_git_last_dirty_check_timestamp+x} ]] && git_color=red
 
+	local hub_status_color
+	local hub_status
+
 	# Initialize the preprompt array.
 	local -a preprompt_parts
 
@@ -119,6 +122,24 @@ prompt_pure_preprompt_render() {
 	# Git pull/push arrows.
 	if [[ -n $prompt_pure_git_arrows ]]; then
 		preprompt_parts+=('%F{cyan}${prompt_pure_git_arrows}%f')
+	fi
+	if [[ -n $prompt_pure_hub_ci_status ]]; then
+		# dont print "no status"
+		[[ $prompt_pure_hub_ci_status != "no status" ]] && hub_status=$prompt_pure_hub_ci_status
+
+		case "$prompt_pure_hub_ci_status" in
+			success)
+				hub_status_color=green
+				;;
+			error|failure)
+				hub_status_color=red
+				;;
+			pending)
+				hub_status_color=yellow
+				;;
+		esac
+
+		preprompt_parts+=("%F{$hub_status_color}"'${hub_status}%f')
 	fi
 
 	# Username and machine, if applicable.
@@ -259,6 +280,15 @@ prompt_pure_async_git_fetch() {
 	prompt_pure_async_git_arrows $1
 }
 
+prompt_pure_async_hub_ci() {
+	setopt localoptions noshwordsplit
+	builtin cd -q $1
+
+	if hash hub 2>/dev/null; then
+		command hub ci-status
+	fi
+}
+
 prompt_pure_async_git_arrows() {
 	setopt localoptions noshwordsplit
 	builtin cd -q $1
@@ -287,6 +317,7 @@ prompt_pure_async_tasks() {
 		unset prompt_pure_git_last_dirty_check_timestamp
 		unset prompt_pure_git_arrows
 		unset prompt_pure_git_fetch_pattern
+		unset prompt_pure_hub_ci_status
 		prompt_pure_vcs_info[branch]=
 		prompt_pure_vcs_info[top]=
 	fi
@@ -322,8 +353,10 @@ prompt_pure_async_refresh() {
 	integer time_since_last_dirty_check=$(( EPOCHSECONDS - ${prompt_pure_git_last_dirty_check_timestamp:-0} ))
 	if (( time_since_last_dirty_check > ${PURE_GIT_DELAY_DIRTY_CHECK:-1800} )); then
 		unset prompt_pure_git_last_dirty_check_timestamp
+		unset prompt_pure_hub_ci_status
 		# check check if there is anything to pull
 		async_job "prompt_pure" prompt_pure_async_git_dirty ${PURE_GIT_UNTRACKED_DIRTY:-1} $PWD
+		async_job "prompt_pure" prompt_pure_async_hub_ci $PWD
 	fi
 }
 
@@ -413,6 +446,10 @@ prompt_pure_async_callback() {
 					prompt_pure_preprompt_render
 				fi
 			fi
+			;;
+		prompt_pure_async_hub_ci)
+			typeset -g prompt_pure_hub_ci_status=${output}
+			prompt_pure_preprompt_render
 			;;
 	esac
 }
