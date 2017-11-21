@@ -115,8 +115,8 @@ set breakindent                         " soft wrapped lines continue indent
 set showbreak=                          " dont highlight softwrapped lines
 
 set expandtab                           " tabs are spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set autoindent                          " continue indentation
 
 set formatoptions=
