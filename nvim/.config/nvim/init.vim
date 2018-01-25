@@ -29,6 +29,7 @@ if dein#load_state('$HOME/.local/share/dein')
   call dein#add('tpope/vim-sleuth')                 " autodetect indentations
   call dein#add('tpope/vim-speeddating')            " Inc/dec dates w CTRL+A/X
   call dein#add('tpope/vim-unimpaired')             " move around quickly
+  call dein#add('tpope/vim-vinegar.git')            " buffer control
   call dein#add('sjbach/lusty')                     " change buffers nicely
   call dein#add('scrooloose/nerdcommenter')         " easy comments
   call dein#add('scrooloose/syntastic')             " linter
@@ -203,6 +204,10 @@ let g:nvim_typescript#type_info_on_hold = 1
 
 " Clojure
 " let g:paredit_electric_return = 0
+
+" git commit messages
+" soft wrapping advice from https://stackoverflow.com/a/989317/303748
+au FileType gitcommit setlocal wrap tw=0 fo=jroqnl1 co=86 nuw=6
 
 " Key bindings
 
