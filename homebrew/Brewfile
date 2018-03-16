@@ -34,6 +34,7 @@ brew 'git', args: [
 ]
 brew 'gnupg2'         # Encryption
 brew 'gpgme'          # Makes GnuPG easier to use
+brew 'pinentry-mac'
 brew 'sqlite'
 brew 'tmux'
 brew 'tree'
