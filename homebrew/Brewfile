@@ -95,3 +95,5 @@ tap 'caskroom/fonts'
 cask 'font-fira-code'
 cask 'font-fira-sans'
 cask 'font-source-code-pro'
+cask 'font-iosevka'
+
