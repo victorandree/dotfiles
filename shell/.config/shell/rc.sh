@@ -64,6 +64,9 @@ fi
 # True color support for Neovim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+BASE16_SHELL=$HOME/.config/shell/base16-shell
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # This takes just a little bit too much time!! Use modern techniques
 # instead.
 # Configure virtualenvwrapper for Python
@@ -79,3 +82,4 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 # alias v.cdsitepackages='cdsitepackages'
 # alias v.cd='cdvirtualenv'
 # alias v.lssitepackages='lssitepackages'
+

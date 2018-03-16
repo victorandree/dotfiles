@@ -40,7 +40,8 @@ if dein#load_state('$HOME/.local/share/dein')
   call dein#add('Chiel92/vim-autoformat')           " Formatting
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('mileszs/ack.vim')
-  call dein#add('joshdick/onedark.vim')		        " color scheme from Atom
+  call dein#add('joshdick/onedark.vim')             " color scheme from Atom
+  call dein#add('chriskempson/base16-vim')          " base16 colors
   call dein#add('Shougo/deoplete.nvim')             " autocompletion
   call dein#add('Shougo/neoinclude.vim')            " auto include
   call dein#add('Shougo/echodoc.vim')               " func sign in echo
@@ -150,7 +151,13 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable                           " enable syntax hilite
-colorscheme onedark
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+else
+  colorscheme onedark
+endif
 
 hi QuickFixLine guibg=#bf616a guifg=#d8dee9
 
