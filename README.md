@@ -22,6 +22,15 @@ browsing this directory without displaying hidden files will be rather empty.
 Bootstrap
 ---------
 
+### Homebrew
+The `homebrew` configuration comes with a `Brewfile` that can be used to
+install necessary apps. Then, from the `dotfiles/homebrew` directory, just run:
+
+    brew bundle
+
+And all kinds of interesting Homebrew packages will be installed.
+
+### GNU Stow
 You will need [GNU Stow][gnu-stow] installed to stow files properly. On macOS,
 this is most easily achieved through [Homebrew][homebrew] and a simple
 
@@ -31,18 +40,22 @@ Then, with the `dotfiles` directory checked out somewhere, run `stow` for each
 configuration you want. The above `ls -d */ | xargs stow` command will install
 all configurations.
 
-### Homebrew
-The `homebrew` configuration comes with a `Brewfile` that can be used for
-installing common packages on macOS. You need [Brew Bundle][homebrew-bundle],
-which can be installed with:
+    ls -d */ | xargs stow
 
-    brew tap Homebrew/bundle
+This will activate all relevant dotfiles.
 
-Then, from the `dotfiles/homebrew` directory, just run:
+### GPG
+On macOS, use pinentry-mac to enter passphrases for PGP keys:
 
-    brew bundle
+    echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
-And all kinds of interesting Homebrew packages will be installed.
+For all OS, it makes sense to configure UTF-8 support because you have weird
+characters in your name:
+
+    echo "charset utf-8" >> ~/.gnupg/gpg.conf
+
+This isn't part of dotfiles, because .gnupg needs to contain other stuff (well,
+it can probably be configured otherwise).
 
 ### Shells
 I use [zsh][zsh] as my main shell. Install it with Homebrew and then configure
