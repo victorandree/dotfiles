@@ -1,3 +1,6 @@
+# Run `brew bundle` in this folder to install
+# Run with Terminal the first thing you do
+
 # Core dependencies
 brew 'automake'
 brew 'autoconf'
@@ -17,7 +20,7 @@ brew 'xz'           # Compression
 brew 'libyaml'      # Fast read-write YAML
 
 # E-mail
-brew 'isync'
+# brew 'isync'
 
 # Core utilities
 brew 'coreutils'
@@ -45,7 +48,6 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Core languages/VMs
-tap 'homebrew/dupes'
 brew 'tcl-tk', args: ['with-threads']
 brew 'python', args: ['with-tcl-tk']
 brew 'python3', args: ['with-tcl-tk']
@@ -71,13 +73,15 @@ brew 'postgresql', args: ['--with-python3']
 
 # Cask
 tap 'caskroom/cask'
-cask 'atom'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'iterm2'
-cask 'keybase'
+# cask 'keybase'
 cask 'transmission'
 cask 'vlc'
+
+cask 'karabiner-elements'
+cask 'spectacle'
 
 # Quicklook plugins
 cask 'qlmarkdown'     # Markdown preview with Quicklook

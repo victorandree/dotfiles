@@ -4,6 +4,8 @@ endif
 
 " Follow installation instructions at https://github.com/Shougo/dein.vim
 " Install to ~/.local/share/dein
+"     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+"     sh installer.sh ~/.local/share/dein
 set runtimepath+=$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('$HOME/.local/share/dein')
