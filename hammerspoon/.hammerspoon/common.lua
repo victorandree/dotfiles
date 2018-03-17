@@ -1,3 +1,6 @@
+-- Create "init.lua" in Hammerspoon and include this file to get started
+-- I.e. `require "common"`
+
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "R", function()
   hs.reload()
 end)
