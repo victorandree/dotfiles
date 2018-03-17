@@ -3,7 +3,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "R", function()
 end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
-  insert(hs.host.uuid())
+  insert(string.lower(hs.host.uuid()))
 end)
 
 function insert (x)
