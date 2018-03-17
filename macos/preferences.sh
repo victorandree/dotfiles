@@ -34,3 +34,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Show Library folder
 chflags nohidden ~/Library
+
+# Use . as decimal separators for both numbers and currency
+defaults write "Apple Global Domain" AppleICUNumberSymbols -dict 0 "." 10 "."
+
