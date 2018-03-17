@@ -76,12 +76,15 @@ brew 'postgresql', args: ['--with-python3']
 tap 'caskroom/cask'
 cask 'dropbox'
 cask 'google-chrome'
+cask 'visual-studio-code'
+cask 'postman'
 cask 'iterm2'
 # cask 'keybase'
 cask 'transmission'
 cask 'vlc'
 
 cask 'karabiner-elements'
+cask 'hammerspoon'
 cask 'spectacle'
 
 # Quicklook plugins
