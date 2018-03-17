@@ -76,6 +76,7 @@ brew 'postgresql', args: ['--with-python3']
 tap 'caskroom/cask'
 cask 'dropbox'
 cask 'google-chrome'
+cask 'google-drive-file-stream'
 cask 'visual-studio-code'
 cask 'postman'
 cask 'iterm2'
