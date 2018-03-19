@@ -23,3 +23,16 @@ function insert (x)
   hs.eventtap.keyStroke({"cmd"}, "v")
   hs.pasteboard.setContents(pasteboardContents)
 end
+
+function lockApVolume (volume)
+  -- redirect stderr to stdout so we can catch what went wrong
+  command = string.format("diskutil ap lock %s 2>&1", volume)
+  output, status = hs.execute(command)
+
+  if (status) then
+    hs.alert.show(string.format("Locked %s", volume))
+  else
+    hs.alert.show(trim(output))
+  end
+end
+
