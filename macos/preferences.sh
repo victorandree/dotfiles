@@ -38,3 +38,5 @@ chflags nohidden ~/Library
 # Use . as decimal separators for both numbers and currency
 defaults write "Apple Global Domain" AppleICUNumberSymbols -dict 0 "." 10 "."
 
+# Fast tracking on trackpad
+defaults write "Apple Global Domain" com.apple.trackpad.scaling -int 3
