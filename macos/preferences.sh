@@ -40,3 +40,7 @@ defaults write "Apple Global Domain" AppleICUNumberSymbols -dict 0 "." 10 "."
 
 # Fast tracking on trackpad
 defaults write "Apple Global Domain" com.apple.trackpad.scaling -int 3
+
+defaults write "Apple Global Domain" AppleInterfaceStyle "Dark"
+defaults write "Apple Global Domain" AppleAquaColorVariant -int 6
+defaults write "Apple Global Domain" AppleHighlightColor "0.847059 0.847059 0.862745"
