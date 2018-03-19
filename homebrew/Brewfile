@@ -84,6 +84,7 @@ cask 'keybase'
 cask 'transmission'
 cask 'vlc'
 
+cask '1password'
 cask 'karabiner-elements'
 cask 'hammerspoon'
 cask 'spectacle'
