@@ -14,11 +14,10 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH="${HOME}/Library/Android/sdk/tools:${PATH}"
 
-# This is not supported on servers, so only do OSX
-# See: https://www.gnu.org/software/gettext/manual/html_node/Locale-Environment-Variables.html
-# Use American English with superior Canadian formats
+# Use American English, despite poor formats. Migrate to `en_CA` when the time
+# is ready
 export LANG=en_US.UTF-8
-export LC_MESSAGES=en_CA.UTF-8
+export LC_MESSAGES=en_US.UTF-8
 
 # This is for quick Clojure start-up primarily -- strictly not macOS specific
 # but don't want to clutter others with it.
