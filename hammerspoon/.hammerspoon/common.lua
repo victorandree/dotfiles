@@ -17,6 +17,14 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
   insert(string.sub(string.lower(hs.host.uuid()), 0, 8))
 end)
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()
+  insert(os.date("!%Y-%m-%dT%H:%M:%S.000Z"))
+end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "I", function()
+  insert("ecac5c9e-153c-4887-af27-0db914198ec1")
+end)
+
 function insert (x)
   local pasteboardContents = hs.pasteboard.getContents()
   hs.pasteboard.setContents(x)
