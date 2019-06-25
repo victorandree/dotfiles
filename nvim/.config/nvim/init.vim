@@ -8,6 +8,9 @@ endif
 "     sh installer.sh ~/.local/share/dein
 set runtimepath+=$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim
 
+" To install plugins, run
+"   :call dein#install()
+
 if dein#load_state('$HOME/.local/share/dein')
   call dein#begin('$HOME/.local/share/dein')
   call dein#add('$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim')
@@ -32,7 +35,7 @@ if dein#load_state('$HOME/.local/share/dein')
   call dein#add('tpope/vim-speeddating')            " Inc/dec dates w CTRL+A/X
   call dein#add('tpope/vim-unimpaired')             " move around quickly
   call dein#add('tpope/vim-vinegar.git')            " buffer control
-  call dein#add('sjbach/lusty')                     " change buffers nicely
+  " call dein#add('sjbach/lusty')                     " change buffers nicely
   call dein#add('scrooloose/nerdcommenter')         " easy comments
   call dein#add('scrooloose/syntastic')             " linter
   call dein#add('vim-scripts/paredit.vim')          " paredit
@@ -51,15 +54,20 @@ if dein#load_state('$HOME/.local/share/dein')
   call dein#add('HerringtonDarkholme/yats.vim')     " typescript hilite
   call dein#add('mhartington/nvim-typescript')      " typescript for nvim
   call dein#add('JuliaLang/julia-vim')              " Julia support
-  call dein#add('keith/tmux.vim')					" tmux syntax hilite
+  call dein#add('keith/tmux.vim')					          " tmux syntax hilite
   call dein#add('chrisbra/csv.vim')                 " CSV editing support
   call dein#add('plasticboy/vim-markdown')          " Markdown support
-  call dein#add('jceb/vim-orgmode')					" Org mode for vim
+  call dein#add('jceb/vim-orgmode')					        " Org mode for vim
   call dein#add('vim-scripts/utl.vim')              " Links (needed by Org)
   call dein#add('Quramy/vim-js-pretty-template')    " Pretty template strings
   call dein#add('fleischie/vim-styled-components')  " Styled components support
 
+  " Themes
+  call dein#add('drewtempelmeyer/palenight.vim')
+
   call dein#add('Shougo/vimshell')
+
+  call dein#add('vim-scripts/DrawIt')                  " Drawing in vim
 
   call dein#end()
   call dein#save_state()
@@ -153,8 +161,10 @@ endif
 syntax enable                           " enable syntax hilite
 
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+  " let base16colorspace=256
+  " source ~/.vimrc_background
+  set background=dark
+  colorscheme palenight
 else
   colorscheme onedark
 endif
@@ -179,8 +189,8 @@ let g:deoplete#auto_complete_delay = 0
 
 let g:deoplete#enable_at_startup = 0
 " autocmd FileType typescript  call deoplete#enable()
-autocmd FileType typescript map <F12> :TSDefPreview<CR>
-autocmd FileType typescript map <S-F12> :TSRefs<CR>
+" autocmd FileType typescript map <F12> :TSDefPreview<CR>
+" autocmd FileType typescript map <S-F12> :TSRefs<CR>
 
 " automatically lint stuff
 let g:syntastic_always_populate_loc_list = 1
@@ -215,8 +225,17 @@ let g:nvim_typescript#type_info_on_hold = 1
 " let g:paredit_electric_return = 0
 
 " git commit messages
+" formatoptions work like so:
+" - jroq: manage comment formatting auto
+" - n: format lists
+" - l: dont format in insert mode
+" - 1: dont break after one-letter words
+"
 " soft wrapping advice from https://stackoverflow.com/a/989317/303748
-au FileType gitcommit setlocal wrap tw=0 fo=jroqnl1 co=86 nuw=6
+au FileType gitcommit setlocal wrap tw=1 fo=jroqnl1 co=86 nuw=6
+
+" Asciidoc
+au FileType asciidoc setlocal wrap tw=0 fo=
 
 " Key bindings
 

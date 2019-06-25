@@ -64,7 +64,7 @@ brew 'node', args: ['with-openssl']
 # Misc utilities
 brew 'ansible'            # Deployment automation
 brew 'aspell'             # GNU spell check
-brew 'cdiff'              # Colorized diffing (replaces colordiff)
+brew 'ydiff'              # Colorized diffing (replaces colordiff)
 brew 'grc'                # Generic Colorizer
 brew 'trash'              # CLI for macOS trash
 brew 'highlight'          # Highlight source code
@@ -103,3 +103,7 @@ cask 'font-fira-sans'
 cask 'font-source-code-pro'
 cask 'font-iosevka'
 
+# Tiling WM
+tap 'crisidev/homebrew-chunkwm'
+brew 'koekeishiya/formulae/skhd'
+brew 'chunkwm'

@@ -10,11 +10,12 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "R", function()
 end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
-  insert(string.lower(hs.host.uuid()))
+  recentuuid = string.lower(hs.host.uuid())
+  insert(recentuuid)
 end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
-  insert(string.sub(string.lower(hs.host.uuid()), 0, 8))
+  insert(recentuuid)
 end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()

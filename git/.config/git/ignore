@@ -40,3 +40,5 @@ Thumbs.db
 .env
 
 google_application_credentials.json
+.key-file.*.json
+.secrets
