@@ -73,3 +73,7 @@ prompt pure
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 source ~/.config/shell/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_LAZY_LOAD=true
+export NVM_DIR="$HOME/.local/nvm"
+source ~/.config/shell/zsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
