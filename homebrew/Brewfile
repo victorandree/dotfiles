@@ -28,10 +28,7 @@ brew 'findutils'
 brew 'stow'           # Manage dotfiles
 brew 'fzf'            # Command line fuzzy finder
 brew 'the_silver_searcher' # Code search
-brew 'git', args: [
-  'with-pcre',
-  'with-gettext'
-]
+brew 'git'
 brew 'gnupg2'         # Encryption
 brew 'gpgme'          # Makes GnuPG easier to use
 brew 'pinentry-mac'
@@ -40,26 +37,20 @@ brew 'tmux'
 brew 'tree'
 tap 'neovim/neovim'
 brew 'neovim'
-brew 'wget', args: [
-  'with-pcre',
-  'with-gpgme',
-  'with-iri'
-]
+brew 'wget'
 brew 'zsh'
 brew 'zsh-completions'
 
 # Core languages/VMs
-brew 'tcl-tk', args: ['with-threads']
-brew 'python', args: ['with-tcl-tk']
-brew 'python3', args: ['with-tcl-tk']
-brew 'ruby', args: [
-  'with-doc',
-  'with-gdbm',
-  'with-gmp',
-  'with-libffi'
-]
+brew 'tcl-tk'
+brew 'python'
+brew 'python3'
+brew 'ruby'
 brew 'go'
-brew 'node', args: ['with-openssl']
+
+# install using nvm instead
+# brew 'node', args: ['with-openssl']
+brew 'nvm'
 
 # Misc utilities
 brew 'ansible'            # Deployment automation
@@ -70,7 +61,7 @@ brew 'trash'              # CLI for macOS trash
 brew 'highlight'          # Highlight source code
 
 # Databases
-brew 'postgresql', args: ['--with-python3']
+brew 'postgresql'
 
 # Cask
 tap 'caskroom/cask'
@@ -83,6 +74,7 @@ cask 'iterm2'
 cask 'keybase'
 cask 'transmission'
 cask 'vlc'
+cask 'slack'
 
 cask '1password'
 cask 'karabiner-elements'
