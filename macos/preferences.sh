@@ -5,7 +5,7 @@ defaults write -g com.apple.keyboard.fnState -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
 # Show remaining battery time
-defaults write com.apple.menuextra.battery ShowTime -string "YES"
+# defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -39,8 +39,11 @@ chflags nohidden ~/Library
 defaults write "Apple Global Domain" AppleICUNumberSymbols -dict 0 "." 10 "."
 
 # Fast tracking on trackpad
-defaults write "Apple Global Domain" com.apple.trackpad.scaling -int 3
+defaults write "Apple Global Domain" com.apple.trackpad.scaling -int 1.5
 
 defaults write "Apple Global Domain" AppleInterfaceStyle "Dark"
 defaults write "Apple Global Domain" AppleAquaColorVariant -int 6
 defaults write "Apple Global Domain" AppleHighlightColor "0.847059 0.847059 0.862745"
+
+# Don't show recent apps in Dock.app
+defaults write com.apple.Dock "show-recents" 0

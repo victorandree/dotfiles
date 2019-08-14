@@ -75,11 +75,14 @@ cask 'keybase'
 cask 'transmission'
 cask 'vlc'
 cask 'slack'
+cask 'spotify'
+
+tap 'homebrew/cask-versions'
+cask 'firefox-nightly'
 
 cask '1password'
 cask 'karabiner-elements'
 cask 'hammerspoon'
-cask 'spectacle'
 
 # Quicklook plugins
 cask 'qlmarkdown'     # Markdown preview with Quicklook
