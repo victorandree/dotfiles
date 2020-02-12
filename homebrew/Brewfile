@@ -96,6 +96,7 @@ cask 'qlstephen'      # Quicklook plaintext without extensions
 tap 'caskroom/fonts'
 cask 'font-fira-code'
 cask 'font-fira-sans'
+cask 'font-fira-mono'
 cask 'font-source-code-pro'
 cask 'font-iosevka'
 
