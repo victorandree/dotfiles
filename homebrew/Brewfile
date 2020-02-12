@@ -59,6 +59,7 @@ brew 'ydiff'              # Colorized diffing (replaces colordiff)
 brew 'grc'                # Generic Colorizer
 brew 'trash'              # CLI for macOS trash
 brew 'highlight'          # Highlight source code
+brew 'jq'                 # JSON grep utility
 
 # Databases
 brew 'postgresql'
