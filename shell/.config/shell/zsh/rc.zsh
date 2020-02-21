@@ -3,7 +3,14 @@ source $HOME/.config/shell/rc.sh
 
 # Additional stuff (just pure prompt right now)
 fpath=("$HOME/.config/shell/zsh/functions" $fpath)
-fpath=("$HOME/.config/shell/zsh/plugins/zsh-completions/src" $fpath)
+
+# If Homebrew installs zsh-completions, use them
+if [ -d "/usr/local/share/zsh-completions" ]
+then
+  fpath=("/usr/local/share/zsh-completions" $fpath)
+else
+  fpath=("$HOME/.config/shell/zsh/plugins/zsh-completions/src" $fpath)
+fi
 
 # Initialize completion
 autoload -Uz compinit && compinit
