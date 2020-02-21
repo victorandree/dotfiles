@@ -99,6 +99,7 @@ cask 'font-fira-sans'
 cask 'font-fira-mono'
 cask 'font-source-code-pro'
 cask 'font-iosevka'
+cask 'font-fontawesome'
 
 # Tiling WM
 tap 'crisidev/homebrew-chunkwm'
