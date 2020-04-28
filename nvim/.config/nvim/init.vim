@@ -232,7 +232,7 @@ let g:nvim_typescript#type_info_on_hold = 1
 " - 1: dont break after one-letter words
 "
 " soft wrapping advice from https://stackoverflow.com/a/989317/303748
-au FileType gitcommit setlocal wrap tw=1 fo=jroqnl1 co=86 nuw=6
+" au FileType gitcommit setlocal wrap tw=1 fo=jroqnl1 co=86 nuw=6
 
 " Asciidoc
 au FileType asciidoc setlocal wrap tw=0 fo=
