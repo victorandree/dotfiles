@@ -418,11 +418,11 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 163 224 275 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 387 620 392 0 0 1440 877 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>30 114 1334 698 0 0 1440 877 </string>
+	<string>120 310 1290 614 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 94 1440 698 0 0 1440 877 </string>
+	<string>64 118 1376 698 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>308 133 1110 719 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1293,6 +1293,7 @@
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.0</string>
 		<string>3.3.2</string>
 		<string>3.3.4</string>
@@ -1315,7 +1316,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>586946178.97925305</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>27</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587032526.09676003</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2125,12 +2126,16 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-12T10:41:24Z</date>
+	<date>2020-03-30T17:29:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3668132659</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -2151,6 +2156,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 </dict>
 </plist>
