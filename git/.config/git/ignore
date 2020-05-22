@@ -1,12 +1,3 @@
-# Compiled
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-*.pyc
-
 # Editors
 *.swp
 *~
@@ -42,3 +33,4 @@ Thumbs.db
 google_application_credentials.json
 .key-file.*.json
 .secrets
+
