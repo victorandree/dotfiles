@@ -26,8 +26,8 @@ bindkey '^XE' edit-command-line
 
 # Setup prompt if pure is available (as a subtree)
 # See README.md on how to pull subtree
-if [ -d $XDG_DATA_HOME/zsh/pure ]; then
-  fpath+=$XDG_DATA_HOME/zsh/pure
+if [ -d "$XDG_DATA_HOME/zsh/pure" ]; then
+  fpath+="$XDG_DATA_HOME/zsh/pure"
   autoload -Uz promptinit
   promptinit
   prompt pure
@@ -49,5 +49,5 @@ bindkey "^R" history-incremental-search-backward
 # Enable syntax highlighting
 # This must happen after all custom widgets are created
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-[ -f $XDG_DATA_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] &&
-  source $XDG_DATA_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f "$XDG_DATA_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] &&
+  source "$XDG_DATA_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
