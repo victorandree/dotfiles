@@ -51,4 +51,9 @@ uuid () {
   python3 -c 'import uuid; print(uuid.uuid4(), end="")'
 }
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+  eval "$(pyenv init -)"
+fi
+
 source "$XDG_CONFIG_HOME/login_macos.sh"
