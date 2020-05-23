@@ -35,6 +35,8 @@ command! PackagerStatus call PackagerInit() | call packager#status()
 filetype plugin indent on
 syntax enable
 
+colorscheme peachpuff
+
 " Enables mouse for all modes
 set mouse=a
 
