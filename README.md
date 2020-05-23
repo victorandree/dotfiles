@@ -67,16 +67,22 @@ This does mean that when running SSH commands,
 the environment may not have been setup "as expected",
 but otherwise results in a simple experience.
 
-#### pure prompt
+#### Plugins
 
-[Pure](https://github.com/sindresorhus/pure) prompt is added as a [git subtree].
-To pull,
+We add some plugins to zsh using [git subtree].
+These are added with prefix `shell/.local/share/zsh`.
+To update,
 
 ```sh
 git subtree pull \
    --squash \
    --prefix shell/.local/share/zsh/pure \
    https://github.com/sindresorhus/pure.git master
+
+git subtree pull \
+   --squash \
+   --prefix shell/.local/share/zsh/zsh-syntax-highlighting \
+   https://github.com/zsh-users/zsh-syntax-highlighting.git master
 ```
 
 ### GnuPG bootstrap
