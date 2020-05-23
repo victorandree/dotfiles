@@ -1,8 +1,8 @@
 # macOS specific environment configuration
 [ "${OSTYPE#darwin}" = "$OSTYPE" ] && return 1
 
-# Adds user specific Homebrew paths
-export PATH="$XDG_DATA_HOME/brew/bin:$PATH"
+# Configure macOS Homebrew for user specific installation
+# Note that we set $PATH in login.sh
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 
 # This only works reliably on macOS but is required to get encodings right.
