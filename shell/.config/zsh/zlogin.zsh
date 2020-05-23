@@ -33,6 +33,10 @@ if [ -d "$XDG_DATA_HOME/zsh/pure" ]; then
   prompt pure
 fi
 
+# Use emacs key bindings by default
+# I can't quite get vim bindings to work properly
+bindkey -e
+
 # Save big history immediately, without duplicates
 HISTSIZE="100000"
 SAVEHIST="$HISTSIZE"
