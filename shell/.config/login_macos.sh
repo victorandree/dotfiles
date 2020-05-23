@@ -3,6 +3,7 @@
 
 # Adds user specific Homebrew paths
 export PATH="$XDG_DATA_HOME/brew/bin:$PATH"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 
 # This only works reliably on macOS but is required to get encodings right.
 # American formats are stupid, but so are most "national" formats.
