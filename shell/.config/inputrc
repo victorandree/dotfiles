@@ -42,6 +42,9 @@ set page-completions off
 "\e[B": history-search-forward
 "\e[A": history-search-backward
 
+# Use Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
+
 # Indent and dedent in Python terminal (?)
 $if Python
     "\M-i": "    "
