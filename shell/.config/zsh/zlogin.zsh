@@ -24,6 +24,15 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 bindkey '^XE' edit-command-line
 
+# Setup prompt if pure is available (as a subtree)
+# See README.md on how to pull subtree
+if [ -d $XDG_DATA_HOME/zsh/pure ]; then
+  fpath+=$XDG_DATA_HOME/zsh/pure
+  autoload -Uz promptinit
+  promptinit
+  prompt pure
+fi
+
 # Save big history immediately, without duplicates
 HISTSIZE="100000"
 SAVEHIST="$HISTSIZE"

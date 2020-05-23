@@ -67,6 +67,18 @@ This does mean that when running SSH commands,
 the environment may not have been setup "as expected",
 but otherwise results in a simple experience.
 
+#### pure prompt
+
+[Pure](https://github.com/sindresorhus/pure) prompt is added as a [git subtree].
+To pull,
+
+```sh
+git subtree pull \
+   --squash \
+   --prefix shell/.local/share/zsh/pure \
+   https://github.com/sindresorhus/pure.git master
+```
+
 ### GnuPG bootstrap
 
 The login shell sets `GNUPGHOME="$XDG_DATA_HOME/gnupg"`.
@@ -81,3 +93,4 @@ EOF
 
 [gnu stow]: https://www.gnu.org/software/stow/
 [homebrew]: https://brew.sh/
+[git subtree]: https://www.atlassian.com/git/tutorials/git-subtree
