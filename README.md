@@ -100,6 +100,18 @@ pinentry-program $(command -v pinentry-mac)
 EOF
 ```
 
+### nvim packages
+
+[vim-packager] is used for vim packages.
+It doesn't seem possible to manage the package manager separately from packages.
+Therefore, start by installing `minpac` using the instructions:
+
+```sh
+git clone https://github.com/kristijanhusak/vim-packager ~/.config/nvim/pack/packager/opt/vim-packager
+```
+
+[vim-packager]: https://github.com/kristijanhusak/vim-packager
 [gnu stow]: https://www.gnu.org/software/stow/
 [homebrew]: https://brew.sh/
 [git subtree]: https://www.atlassian.com/git/tutorials/git-subtree
+

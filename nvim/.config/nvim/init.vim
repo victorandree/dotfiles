@@ -1,4 +1,24 @@
-" dein requires these settings
+if &compatible
+  set nocompatible
+endif
+
+" Uses https://github.com/kristijanhusak/vim-packager to manage vim plugins
+" This must be installed independently:
+"
+" git clone https://github.com/kristijanhusak/vim-packager ~/.config/nvim/pack/packager/opt/vim-packager
+"
+" Then, :PackagerInstall and :PackagerUpdate are used to install packages
+function! PackagerInit() abort
+  packadd vim-packager
+  call packager#init()
+  call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
+endfunction
+
+command! PackagerInstall call PackagerInit() | call packager#install()
+command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
+command! PackagerClean call PackagerInit() | call packager#clean()
+command! PackagerStatus call PackagerInit() | call packager#status()
+
 filetype plugin indent on
 syntax enable
 
