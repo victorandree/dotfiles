@@ -1,0 +1,63 @@
+# Bootstrap this configuration by including it in ~/.config/git/config
+# See README.md
+
+# This configures a default name, but will require configuring an email for
+# every repository/explicitly.
+[user]
+  name = "Victor Andrée"
+  useConfigOnly = true
+
+[apply]
+  # Tries to fix bad whitespace
+  whitespace = fix
+
+[push]
+  # Pushes to identically named branches on the upstream
+  default = current
+
+  # Pushes annotated tags (`--follow-tags`)
+  followTags = true
+
+[merge]
+  defaultToUpstream = true
+
+[mergetool]
+  keepBackup = false
+
+[grep]
+  lineNumber = true
+
+[pretty]
+  line = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
+  compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
+  detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
+
+[color "grep"]
+  match = cyan bold
+  selected = blue
+  context = normal
+  filename = magenta
+  linenumber = green
+  separator = yellow
+  function = blue
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  st = status -sb
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aE>%Creset' --abbrev-commit

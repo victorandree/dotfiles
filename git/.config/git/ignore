@@ -1,0 +1,27 @@
+# Global gitignore file
+# Best keep this small and ignore most stuff using directory .gitignore
+
+# Editor and temporary files
+.#*
+.env
+.idea
+.ipynb_checkpoints
+.python-version
+.vscode
+*.egg-info
+*.swp
+*~
+~$*
+
+# macOS
+.com.apple.timemachine.supported
+.DS_Store*
+.Spotlight-V100
+.Trashes
+eththumbs.db
+Icon?
+Thumbs.db
+
+# Secrets
+key-file*
+.secrets

@@ -40,6 +40,9 @@ ls -d */ | xargs --no-folding stow
 
 # Bootstrap zsh
 echo 'source "$HOME/.config/zsh/zlogin.zsh"' >~/.zlogin
+
+# Bootstrap git
+echo '[include]\n  path = ~/.config/git/default' >~/.config/git/config
 ```
 
 ### Shell bootstrap
