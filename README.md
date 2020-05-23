@@ -43,6 +43,9 @@ echo 'source "$HOME/.config/zsh/zlogin.zsh"' >~/.zlogin
 
 # Bootstrap git
 echo '[include]\n  path = ~/.config/git/default' >~/.config/git/config
+
+# Bootstrap tmux
+echo 'source $XDG_CONFIG_HOME/tmux.conf' >~/.tmux.conf
 ```
 
 ### Shell bootstrap
