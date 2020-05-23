@@ -13,6 +13,8 @@ export INPUTRC="$XDG_CONFIG_HOME/inputrc"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
+export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
+
 # Adds user specific Homebrew path to $PATH, if exists
 # This allows us to use brew installed utilities "early"
 if [ -d "$XDG_DATA_HOME/brew/bin" ]; then
