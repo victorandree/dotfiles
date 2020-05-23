@@ -11,7 +11,8 @@ setopt INTERACTIVE_COMMENTS
 setopt CORRECT
 
 # Set up autocompletion
-autoload -U compinit && compinit -d "$XDG_DATA_HOME/zcompdump"
+autoload -Uz compinit
+compinit -d "$XDG_DATA_HOME/zcompdump"
 
 # Save big history immediately, without duplicates
 HISTSIZE="100000"
