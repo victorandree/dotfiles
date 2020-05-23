@@ -19,7 +19,11 @@ if [ -d "$XDG_DATA_HOME/brew/bin" ]; then
   export PATH="$XDG_DATA_HOME/brew/bin:$PATH"
 fi
 
-export EDITOR="vim"
+export EDITOR="vi"
+if command -v nvim >/dev/null; then
+  alias vi='nvim'
+  alias vim='nvim'
+fi
 
 export GREP_OPTIONS="--color=auto"
 
