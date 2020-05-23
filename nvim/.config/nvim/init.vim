@@ -12,6 +12,7 @@ function! PackagerInit() abort
   packadd vim-packager
   call packager#init()
   call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
+  call packager#add('tpope/vim-fugitive')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
