@@ -1,0 +1,49 @@
+# Readline init file
+#
+# Note that `zsh` uses its own `zle` utility, so this is for e.g. Python,
+# psql and other utilities.
+#
+# See https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+
+# Stick with emacs, since seeing the mode for vi is buggy
+set editing-mode emacs
+
+# Colors completions using file type, respecting `$LS_COLORS`
+set colored-stats on
+
+# Displays more information on completed files
+set visible-stats on
+
+# Appends a `/` character to real and symlinked directories
+set mark-directories on
+set mark-symlinked-directories on
+
+# Matches hidden files only if prefixed with `.`
+set match-hidden-files off
+
+# Confirms to show all at 200
+set completion-query-items 200
+
+# When completing inside a word, doesn't insert suffix already there
+set skip-completed-text on
+
+set bell-style visible
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set page-completions off
+
+# Allows UTF-8
+# Should already work if locale is set correctly
+# set input-meta on
+# set output-meta on
+# set convert-meta off
+
+# Uses typed text as prefix when searching in history
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Indent and dedent in Python terminal (?)
+$if Python
+    "\M-i": "    "
+    "\M-u": "\d\d\d\d"
+$endif
