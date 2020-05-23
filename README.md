@@ -67,5 +67,17 @@ This does mean that when running SSH commands,
 the environment may not have been setup "as expected",
 but otherwise results in a simple experience.
 
+### GnuPG bootstrap
+
+The login shell sets `GNUPGHOME="$XDG_DATA_HOME/gnupg"`.
+GnuPG mixes data with configuration, so it's best to configure on your own.
+On macOS, you'll want to install `pinentry-mac` and use it.
+
+```sh
+cat <<EOF >$GNUPGHOME/gpg-agent.conf
+pinentry-program $(command -v pinentry-mac)
+EOF
+```
+
 [gnu stow]: https://www.gnu.org/software/stow/
 [homebrew]: https://brew.sh/

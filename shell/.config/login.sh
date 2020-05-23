@@ -11,6 +11,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export INPUTRC="$XDG_CONFIG_HOME/inputrc"
 
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 export EDITOR="vim"
 
 export GREP_OPTIONS="--color=auto"
