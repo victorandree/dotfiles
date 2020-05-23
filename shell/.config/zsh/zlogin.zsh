@@ -18,12 +18,6 @@ compinit -d "$XDG_DATA_HOME/zcompdump"
 autoload -Uz select-word-style
 select-word-style bash
 
-# Edit command line in an editor if you press Ctrl-x Ctrl-e
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^X^E' edit-command-line
-bindkey '^XE' edit-command-line
-
 # Setup prompt if pure is available (as a subtree)
 # See README.md on how to pull subtree
 if [ -d "$XDG_DATA_HOME/zsh/pure" ]; then
@@ -33,9 +27,45 @@ if [ -d "$XDG_DATA_HOME/zsh/pure" ]; then
   prompt pure
 fi
 
-# Use emacs key bindings by default
-# I can't quite get vim bindings to work properly
-bindkey -e
+# Use vim key bindings with some good ones from `bindkey -e`
+# To display key bindings, type `bindkey`
+bindkey -v
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^B" backward-char
+bindkey "^[^?" backward-kill-word
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+
+# Edit command line in an editor if you press Ctrl-x Ctrl-e
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# Set KEYTIMEOUT to a low value to make switching modes fast
+KEYTIMEOUT=1
+
+# Defaults to bar cursor and insert mode
+echo -ne '\e[5 q'
+
+# Change cursor when switching modes
+zle-keymap-select () {
+  if [ "$TERM" = "xterm-256color" ] || [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
+    if [ $KEYMAP = vicmd ]; then
+      # Switch to block cursor
+      echo -ne '\e[1 q'
+    else
+      # Switch to bar (|) cursor for insert mode
+      echo -ne '\e[5 q'
+    fi
+  fi
+
+  # Call pure prompt to have it update the prompt
+  if typeset -f prompt_pure_update_vim_prompt_widget >/dev/null; then
+    prompt_pure_update_vim_prompt_widget
+  fi
+}
+zle -N zle-keymap-select
 
 # Save big history immediately, without duplicates
 HISTSIZE="100000"
