@@ -12,7 +12,19 @@ function! PackagerInit() abort
   packadd vim-packager
   call packager#init()
   call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
+
+  call packager#add('easymotion/vim-easymotion')
+  call packager#add('kshenoy/vim-signature')
+  call packager#add('maxbrunsfeld/vim-emacs-bindings')
+  call packager#add('michaeljsmith/vim-indent-object')
+  call packager#add('moll/vim-bbye')
   call packager#add('tpope/vim-fugitive')
+  call packager#add('tpope/vim-repeat')
+  call packager#add('tpope/vim-sleuth')
+  call packager#add('tpope/vim-speeddating')
+  call packager#add('tpope/vim-surround')
+  call packager#add('tpope/vim-unimpaired')
+  call packager#add('tpope/vim-vinegar')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
