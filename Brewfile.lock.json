@@ -8,10 +8,13 @@
         "revision": "40e31313ec67641397e64d93e316c4dcd7b782e8"
       },
       "homebrew/cask": {
-        "revision": "b06a10e7f52f3952023eacd93fc2557942bc5e37"
+        "revision": "cf7921333e23f41dc1deb0bc3307bae9a1293dd0"
       },
       "homebrew/cask-fonts": {
         "revision": "583ef3da7d333d8f8378e868ce2b4541adc62d12"
+      },
+      "amar1729/formulae": {
+        "revision": "70f0d4a6fd7c28a8aa07d0e43cc2139c6a025e2a"
       }
     },
     "brew": {
@@ -344,6 +347,19 @@
             }
           }
         }
+      },
+      "browserpass": {
+        "version": "3.0.6",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "mojave": {
+              "url": "https://github.com/Amar1729/homebrew-formulae/releases/download/browserpass-3.0.6/browserpass-3.0.6.mojave.bottle.tar.gz",
+              "sha256": "31b2faf15a7f2ba64897a4d741876c6d2b09ac9e309fa9cb2da230c1a0352506"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -424,8 +440,8 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.17",
-        "HOMEBREW_PREFIX": "/Users/victor/.local/share/brew",
+        "HOMEBREW_VERSION": "2.2.17-96-g2e801c3",
+        "HOMEBREW_PREFIX": "/Users/victor2/.local/share/brew",
         "Homebrew/homebrew-core": "40e31313ec67641397e64d93e316c4dcd7b782e8",
         "CLT": "1103.0.32.59",
         "Xcode": "11.4.1",
