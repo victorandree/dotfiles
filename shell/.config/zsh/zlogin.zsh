@@ -10,6 +10,11 @@ setopt AUTO_CD
 setopt INTERACTIVE_COMMENTS
 setopt CORRECT
 
+# Add completions from Homebrew
+if [ -d "$XDG_DATA_HOME/brew/share/zsh/site-functions" ]; then
+  fpath+="$XDG_DATA_HOME/brew/share/zsh/site-functions"
+fi
+
 # Set up autocompletion
 autoload -Uz compinit
 compinit -d "$XDG_DATA_HOME/zcompdump"
