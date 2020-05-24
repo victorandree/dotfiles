@@ -24,13 +24,13 @@ brew "browserpass" if OS.mac?
 
 tap "homebrew/cask"
 
-# # Quicklook plugins for various files
+# Quicklook plugins for various files
 cask "qlcolorcode"
 cask "quicklook-csv"
 cask "quicklook-json"
 cask "qlmarkdown"
 
-# # Quicklook plaintext if no extension
+# Quicklook plaintext if no extension
 cask "qlstephen"
 
 tap "homebrew/cask-fonts"
