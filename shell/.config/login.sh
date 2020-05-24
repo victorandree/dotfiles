@@ -11,8 +11,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export INPUTRC="$XDG_CONFIG_HOME/inputrc"
 
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-
 export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
 
 # Adds user specific Homebrew path to $PATH, if exists
