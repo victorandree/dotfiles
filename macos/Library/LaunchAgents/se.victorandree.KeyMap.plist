@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+This launch agent uses the `hidutil` utility to remap keys.
+
+- Grave Accent and Tilde (0x35) <-> Non-US \ and | (0x64)
+
+See https://www.nanoant.com/mac/macos-function-key-remapping-with-hidutil
+-->
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>se.victorandree.KeyMap</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/bin/hidutil</string>
+      <string>property</string>
+      <string>--set</string>
+      <string>
+{
+  "UserKeyMapping": [
+    {
+      "HIDKeyboardModifierMappingSrc": 0x700000064,
+      "HIDKeyboardModifierMappingDst": 0x700000035
+    },
+    {
+      "HIDKeyboardModifierMappingSrc": 0x700000035,
+      "HIDKeyboardModifierMappingDst": 0x700000064
+    }
+  ]
+}
+      </string>
+    </array>
+    <key>RunAtLoad</key>
+    <true />
+  </dict>
+</plist>
