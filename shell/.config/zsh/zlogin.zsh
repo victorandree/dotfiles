@@ -80,6 +80,8 @@ setopt HIST_REDUCE_BLANKS
 # Search history using Ctrl-r
 bindkey "^R" history-incremental-search-backward
 
+source "$XDG_CONFIG_HOME/zsh/fzf.zsh"
+
 # Enable syntax highlighting
 # This must happen after all custom widgets are created
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)

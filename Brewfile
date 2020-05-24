@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 brew "aspell"
+brew "fzf"
 brew "git"
 brew "gnupg"
 brew "jq"
