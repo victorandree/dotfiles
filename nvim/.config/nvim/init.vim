@@ -26,6 +26,7 @@ function! PackagerInit() abort
   call packager#add('tpope/vim-surround')
   call packager#add('tpope/vim-unimpaired')
   call packager#add('tpope/vim-vinegar')
+  call packager#add('tyrannicaltoucan/vim-deep-space')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
@@ -36,7 +37,13 @@ command! PackagerStatus call PackagerInit() | call packager#status()
 filetype plugin indent on
 syntax enable
 
-colorscheme peachpuff
+try
+  colorscheme deep-space
+  set background=dark
+  set termguicolors
+catch
+  colorscheme peachpuff
+endtry
 
 " Enables mouse for all modes
 set mouse=a
