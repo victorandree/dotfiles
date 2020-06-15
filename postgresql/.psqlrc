@@ -1,0 +1,30 @@
+-- Don't talk about all the options we're setting
+\set QUIET on
+
+-- Seehttps://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-VARIABLES
+\set VERBOSITY verbose
+
+-- Complete keywords to uppercase
+\set COMP_KEYWORD_CASE upper
+
+-- Ignore dups and lines starting with space
+\set HISTCONTROL ignoreboth
+
+-- Use a separate history file per-database.
+\set HISTFILE ~/.local/psql_history- :DBNAME
+
+-- See https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-META-COMMANDS
+\pset expanded auto
+\pset fieldsep ','
+\pset linestyle unicode
+\pset null '∅'
+\pset numericlocale on
+\pset border 0
+
+-- Do time queries
+\timing on
+
+\set PROMPT1 '%[%033[37m%]%n@%[%033[34m%]%M%[%033[33m%]/%/\n%[%033[35m%]%R%#%[%033[32m%]%x%[%033[0m%] '
+\set PROMPT2 '%[%033[35m%]%R%#%[%033[32m%]%x%[%033[0m%] '
+
+\set QUIET off
