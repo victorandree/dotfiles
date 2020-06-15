@@ -15,21 +15,10 @@ See https://www.nanoant.com/mac/macos-function-key-remapping-with-hidutil
     <array>
       <string>/usr/bin/hidutil</string>
       <string>property</string>
+      <string>--matching</string>
+      <string>{"VendorID":1452,"ProductID":630}</string>
       <string>--set</string>
-      <string>
-{
-  "UserKeyMapping": [
-    {
-      "HIDKeyboardModifierMappingSrc": 0x700000064,
-      "HIDKeyboardModifierMappingDst": 0x700000035
-    },
-    {
-      "HIDKeyboardModifierMappingSrc": 0x700000035,
-      "HIDKeyboardModifierMappingDst": 0x700000064
-    }
-  ]
-}
-      </string>
+      <string>{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":30064771172,"HIDKeyboardModifierMappingDst":30064771125},{"HIDKeyboardModifierMappingSrc":30064771125,"HIDKeyboardModifierMappingDst":30064771172}]}</string>
     </array>
     <key>RunAtLoad</key>
     <true />
