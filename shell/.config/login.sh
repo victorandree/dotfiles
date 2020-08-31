@@ -13,12 +13,6 @@ export INPUTRC="$XDG_CONFIG_HOME/inputrc"
 
 export LESSHISTFILE="$XDG_DATA_HOME/lesshst"
 
-# Adds user specific Homebrew path to $PATH, if exists
-# This allows us to use brew installed utilities "early"
-if [ -d "$XDG_DATA_HOME/brew/bin" ]; then
-  export PATH="$XDG_DATA_HOME/brew/bin:$PATH"
-fi
-
 export EDITOR="vi"
 if command -v nvim >/dev/null; then
   export EDITOR="nvim"

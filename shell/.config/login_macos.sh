@@ -1,10 +1,6 @@
 # macOS specific environment configuration
 [ "${OSTYPE#darwin}" = "$OSTYPE" ] && return 1
 
-# Configure macOS Homebrew for user specific installation
-# Note that we set $PATH in login.sh
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
-
 # This only works reliably on macOS but is required to get encodings right.
 # American formats are stupid, but so are most "national" formats.
 # For example, `LANG=sv_SE date +%x` results in `23.05.2020`

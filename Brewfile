@@ -5,6 +5,7 @@ brew "aspell"
 brew "fzf"
 brew "git"
 brew "gnupg"
+brew "highlight"
 brew "jq"
 brew "neovim"
 brew "pass"
@@ -13,6 +14,7 @@ brew "stow"
 brew "tmux"
 brew "tree"
 brew "wget"
+brew "xmlstarlet"
 
 brew "pinentry-mac" if OS.mac?
 brew "coreutils" if OS.mac?
