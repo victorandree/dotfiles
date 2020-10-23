@@ -1,5 +1,6 @@
 window:
   dimensions: { columns: 160, lines: 42 }
+  dynamic_title: true
   padding: { x: 16, y: 8 }
   decorations: full
 font:
@@ -28,7 +29,6 @@ colors:
     magenta: '#bb9af7'
     cyan: '#7dcfff'
     white: '#acb0d0'
-dynamic_title: true
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: false
