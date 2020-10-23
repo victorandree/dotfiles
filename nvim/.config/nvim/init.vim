@@ -74,6 +74,7 @@ set showbreak=
 set nowrap
 set colorcolumn=80
 
+
 " Expand tabs into 2 spaces
 set expandtab
 set tabstop=2
@@ -145,4 +146,10 @@ inoremap <C-a> <Esc>I
 
 " Edits $MYVIMRC
 nmap <Leader>fed :e $MYVIMRC<CR>
+
+" Unset problematic settings in VS Code
+if exists('g:vscode')
+  set colorcolumn=
+  set nohidden
+endif
 
