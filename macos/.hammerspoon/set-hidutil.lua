@@ -22,6 +22,7 @@ LEFT_GUI_TO_LEFT_ALT = {
 
 -- Figure these out by running `hidutil list` and looking under `Devices`
 INTERNAL_KEYBOARD = {VendorID=0x5ac, ProductID=0x276}
+INTERNAL_KEYBOARD_M1 = {VendorID=0x5ac, ProductID=0x341}
 FUNC_KEYBOARD = {VendorID=0x195d, ProductID=0x2030}
 FILCO_KEYBOARD = {VendorID=0x4d9, ProductID=0x4545}
 RAZER_KEYBOARD = {VendorID=0x1532, ProductID=0x248}
@@ -29,6 +30,10 @@ RAZER_KEYBOARD = {VendorID=0x1532, ProductID=0x248}
 -- Each entry describes a HID property to set for a matching device
 PROPERTIES = {
   [INTERNAL_KEYBOARD]={
+    ACCENT_TO_NON_US,
+    NON_US_TO_ACCENT
+  },
+  [INTERNAL_KEYBOARD_M1]={
     ACCENT_TO_NON_US,
     NON_US_TO_ACCENT
   },
