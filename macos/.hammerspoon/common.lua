@@ -9,6 +9,12 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "R", function()
   hs.reload()
 end)
 
+-- Inserts a random number 1 through 9
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+  r = string.lower(hs.math.randomFromRange(1, 9))
+  insert(r)
+end)
+
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
   recentuuid = string.lower(hs.host.uuid())
   insert(recentuuid)
