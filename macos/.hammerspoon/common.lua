@@ -39,6 +39,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
   insert(pasteboardContents)
 end)
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "1", function()
+  setHidutil()
+end)
+
 function insert (x)
   local pasteboardContents = hs.pasteboard.getContents()
   hs.pasteboard.setContents(x)
