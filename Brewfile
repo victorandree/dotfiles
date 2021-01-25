@@ -4,7 +4,6 @@ tap "homebrew/core"
 brew "aspell"
 brew "fzf"
 brew "git"
-brew "gnupg"
 brew "highlight"
 brew "jq"
 brew "neovim"
@@ -16,14 +15,8 @@ brew "tree"
 brew "wget"
 brew "xmlstarlet"
 
-brew "pinentry-mac" if OS.mac?
 brew "coreutils" if OS.mac?
 brew "findutils" if OS.mac?
-
-# Requires post-setup step:
-# PREFIX="$XDG_DATA_HOME/brew/opt/browserpass" make hosts-firefox-user -f "$XDG_DATA_HOME/brew/opt/browserpass/lib/browserpass/Makefile"
-tap "amar1729/formulae" if OS.mac?
-brew "browserpass" if OS.mac?
 
 tap "homebrew/cask"
 
