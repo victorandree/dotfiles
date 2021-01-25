@@ -6,13 +6,13 @@ brew "fzf"
 brew "git"
 brew "highlight"
 brew "jq"
-brew "neovim"
-brew "pass"
+
+# Doesn't work properly.
+# brew "neovim"
+
 brew "pyenv"
 brew "stow"
 brew "tmux"
-brew "tree"
-brew "wget"
 brew "xmlstarlet"
 
 brew "coreutils" if OS.mac?
