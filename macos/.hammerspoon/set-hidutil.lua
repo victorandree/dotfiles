@@ -26,6 +26,7 @@ INTERNAL_KEYBOARD_M1 = {VendorID=0x5ac, ProductID=0x341}
 FUNC_KEYBOARD = {VendorID=0x195d, ProductID=0x2030}
 FILCO_KEYBOARD = {VendorID=0x4d9, ProductID=0x4545}
 RAZER_KEYBOARD = {VendorID=0x1532, ProductID=0x248}
+RAZER_KEYBOARD_USB = {VendorID=0x1532, ProductID=0x249}
 
 -- Each entry describes a HID property to set for a matching device
 PROPERTIES = {
@@ -48,6 +49,10 @@ PROPERTIES = {
     LEFT_GUI_TO_LEFT_ALT
   },
   [RAZER_KEYBOARD]={
+    LEFT_ALT_TO_LEFT_GUI,
+    LEFT_GUI_TO_LEFT_ALT
+  },
+  [RAZER_KEYBOARD_USB]={
     LEFT_ALT_TO_LEFT_GUI,
     LEFT_GUI_TO_LEFT_ALT
   }
