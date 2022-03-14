@@ -20,6 +20,16 @@ LEFT_GUI_TO_LEFT_ALT = {
   HIDKeyboardModifierMappingDst=0x7000000E2,
 }
 
+RIGHT_ALT_TO_LEFT_GUI = {
+  HIDKeyboardModifierMappingSrc=0x7000000E6,
+  HIDKeyboardModifierMappingDst=0x7000000E7,
+}
+
+RIGHT_GUI_TO_LEFT_ALT = {
+  HIDKeyboardModifierMappingSrc=0x7000000E7,
+  HIDKeyboardModifierMappingDst=0x7000000E6,
+}
+
 -- Figure these out by running `hidutil list` and looking under `Devices`
 INTERNAL_KEYBOARD = {VendorID=0x5ac, ProductID=0x276}
 INTERNAL_KEYBOARD_M1 = {VendorID=0x5ac, ProductID=0x341}
@@ -46,15 +56,21 @@ PROPERTIES = {
   },
   [FILCO_KEYBOARD]={
     LEFT_ALT_TO_LEFT_GUI,
-    LEFT_GUI_TO_LEFT_ALT
+    LEFT_GUI_TO_LEFT_ALT,
+    RIGHT_ALT_TO_LEFT_GUI,
+    RIGHT_GUI_TO_LEFT_ALT
   },
   [RAZER_KEYBOARD]={
     LEFT_ALT_TO_LEFT_GUI,
-    LEFT_GUI_TO_LEFT_ALT
+    LEFT_GUI_TO_LEFT_ALT,
+    RIGHT_ALT_TO_LEFT_GUI,
+    RIGHT_GUI_TO_LEFT_ALT
   },
   [RAZER_KEYBOARD_USB]={
     LEFT_ALT_TO_LEFT_GUI,
-    LEFT_GUI_TO_LEFT_ALT
+    LEFT_GUI_TO_LEFT_ALT,
+    RIGHT_ALT_TO_LEFT_GUI,
+    RIGHT_GUI_TO_LEFT_ALT
   }
 }
 
