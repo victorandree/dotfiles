@@ -1,0 +1,7 @@
+[user]
+  name = "Victor Andrée"
+  email = "victor.andree@advinans.se"
+  signingKey = 44232AD6A35C1F33BD225B58742DF22D820D4538
+
+[commit]
+  gpgsign = true
