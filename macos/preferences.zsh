@@ -21,12 +21,17 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+# Configure Dock to be on the left and quickly autohide
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
 # Faster animations
 # https://apple.stackexchange.com/questions/253756/speed-up-mission-control-animations-in-macos-sierra
 defaults write -g NSWindowResizeTime -float 0.003
-defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
