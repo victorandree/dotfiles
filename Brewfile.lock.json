@@ -5,10 +5,10 @@
         "revision": "3108b2e2a3346b439af7ce8e5bbd54e321c4d7fc"
       },
       "homebrew/core": {
-        "revision": "ffa21a29d5efff7dd9294196521d0c182745b835"
+        "revision": "8cea92ea8da0c91608203069a55c366cd0ea2860"
       },
       "homebrew/cask": {
-        "revision": "b5f7e9f0c4164bd6fd6c6543cdd8db72b3d7c9a9"
+        "revision": "9a37837650c3f349a00494866934f6cb9fd3d65e"
       },
       "homebrew/cask-fonts": {
         "revision": "3cfc52504bea9b272122cb69e9ee5d69a985a3e6"
@@ -834,6 +834,18 @@
         "options": {
           "full_name": "font-input"
         }
+      },
+      "iterm2": {
+        "version": "3.4.18",
+        "options": {
+          "full_name": "iterm2"
+        }
+      },
+      "rectangle": {
+        "version": "0.64,70",
+        "options": {
+          "full_name": "rectangle"
+        }
       }
     }
   },
@@ -858,7 +870,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.17",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "ffa21a29d5efff7dd9294196521d0c182745b835",
+        "Homebrew/homebrew-core": "8cea92ea8da0c91608203069a55c366cd0ea2860",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.0.1"

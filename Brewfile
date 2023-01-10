@@ -29,6 +29,9 @@ cask "qlmarkdown"
 # Quicklook plaintext if no extension
 cask "qlstephen"
 
+cask "iterm2"
+cask "rectangle"
+
 tap "homebrew/cask-fonts"
 cask 'font-fira-code'
 cask 'font-fira-sans'
