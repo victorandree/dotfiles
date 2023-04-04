@@ -24,6 +24,10 @@
 [merge]
   defaultToUpstream = true
 
+[fetch]
+  # Prune remote branches on fetch/pull operations
+  prune = true
+
 [mergetool]
   keepBackup = false
 
