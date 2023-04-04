@@ -28,14 +28,17 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()
   insert(os.date("!%Y-%m-%dT%H:%M:%S.000Z"))
 end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "I", function()
-  insert("ecac5c9e-153c-4887-af27-0db914198ec1")
-end)
-
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
   local pasteboardContents = hs.pasteboard.getContents()
   pasteboardContents = string.gsub(pasteboardContents, '\n', '\\n')
   pasteboardContents = string.gsub(pasteboardContents, '"', '\\"')
+  insert(pasteboardContents)
+end)
+
+hs.hotkey.bind({"cmd","alt","shift"}, "J", function()
+  local pasteboardContents = hs.pasteboard.getContents()
+  pasteboardContents = string.gsub(pasteboardContents, '\\n', '\n')
+  pasteboardContents = string.gsub(pasteboardContents, '\\"', '"')
   insert(pasteboardContents)
 end)
 
