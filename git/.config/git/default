@@ -71,3 +71,6 @@
 
 [includeIf "gitdir:advinans/"]
   path = advinans
+
+[include]
+  path = bodil
