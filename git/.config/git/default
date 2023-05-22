@@ -69,5 +69,5 @@
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aE>%Creset' --abbrev-commit
 
-[include]
+[includeIf "gitdir:bodil/"]
   path = bodil
