@@ -21,16 +21,19 @@ brew "findutils" if OS.mac?
 tap "homebrew/cask"
 
 # Quicklook plugins for various files
-cask "qlcolorcode"
-cask "quicklook-csv"
-cask "quicklook-json"
-cask "qlmarkdown"
+cask "qlcolorcode" if OS.mac?
+cask "quicklook-csv" if OS.mac?
+cask "quicklook-json" if OS.mac?
+cask "qlmarkdown" if OS.mac?
 
 # Quicklook plaintext if no extension
-cask "qlstephen"
+cask "qlstephen" if OS.mac?
 
-cask "iterm2"
-cask "rectangle"
+cask "visual-studio-code" if OS.mac?
+cask "iterm2" if OS.mac?
+cask "rectangle" if OS.mac?
+cask "1password" if OS.mac?
+cask "hammerspoon" if OS.mac?
 
 tap "homebrew/cask-fonts"
 cask 'font-fira-code'
