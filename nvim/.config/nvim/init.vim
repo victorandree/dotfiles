@@ -20,6 +20,7 @@ function! PackagerInit() abort
   call packager#add('michaeljsmith/vim-indent-object')
   call packager#add('moll/vim-bbye')
   call packager#add('tpope/vim-fugitive')
+  call packager#add('tpope/vim-rhubarb')
   call packager#add('tpope/vim-repeat')
   call packager#add('tpope/vim-sleuth')
   call packager#add('tpope/vim-speeddating')
@@ -27,6 +28,7 @@ function! PackagerInit() abort
   call packager#add('tpope/vim-unimpaired')
   call packager#add('tpope/vim-vinegar')
   call packager#add('tyrannicaltoucan/vim-deep-space')
+
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
