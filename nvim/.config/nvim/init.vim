@@ -1,3 +1,7 @@
+" Reminders:
+"
+" - Your <Leader> key is spacebar
+
 if &compatible
   set nocompatible
 endif
@@ -14,21 +18,48 @@ function! PackagerInit() abort
   call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
 
   call packager#add('christoomey/vim-tmux-navigator')
-  call packager#add('easymotion/vim-easymotion')
-  call packager#add('kshenoy/vim-signature')
-  call packager#add('maxbrunsfeld/vim-emacs-bindings')
-  call packager#add('michaeljsmith/vim-indent-object')
-  call packager#add('moll/vim-bbye')
-  call packager#add('tpope/vim-fugitive')
-  call packager#add('tpope/vim-rhubarb')
-  call packager#add('tpope/vim-repeat')
-  call packager#add('tpope/vim-sleuth')
-  call packager#add('tpope/vim-speeddating')
-  call packager#add('tpope/vim-surround')
-  call packager#add('tpope/vim-unimpaired')
-  call packager#add('tpope/vim-vinegar')
-  call packager#add('tyrannicaltoucan/vim-deep-space')
 
+  " <Leader><Leader><motion> without numbers, e.g. <L><L>w for word
+  call packager#add('easymotion/vim-easymotion')
+
+  " Display marks in the gutter
+  call packager#add('kshenoy/vim-signature')
+
+  " Useful key bindings common to Emacs and Cocoa
+  call packager#add('maxbrunsfeld/vim-emacs-bindings')
+
+  " Text object for indendation levels: ai, ii, aI.
+  call packager#add('michaeljsmith/vim-indent-object')
+
+  " Kill buffers with :Bdelete, without closing window
+  call packager#add('moll/vim-bbye')
+
+  " Git wrapper for vim
+  call packager#add('tpope/vim-fugitive')
+
+  " Github integration for vim. Needs a PAT in .netrc
+  call packager#add('tpope/vim-rhubarb')
+
+  " Repeat . for plugin maps
+  call packager#add('tpope/vim-repeat')
+
+  " Figure out e.g. tabs based on what the current file is using
+  call packager#add('tpope/vim-sleuth')
+
+  " Make <C-A> (increment) understan YYYY-MM-DD dates
+  call packager#add('tpope/vim-speeddating')
+
+  " Movemenets on surrounding text
+  call packager#add('tpope/vim-surround')
+
+  " Toggles with ] and ]
+  call packager#add('tpope/vim-unimpaired')
+
+  " Better file browser.
+  call packager#add('tpope/vim-vinegar')
+
+  " A theme for vim
+  call packager#add('tyrannicaltoucan/vim-deep-space')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
