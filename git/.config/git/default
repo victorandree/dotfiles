@@ -1,43 +1,17 @@
 # Bootstrap this configuration by including it in ~/.config/git/config
-# See README.md
 
-# This configures a default name, but will require configuring an email for
-# every repository/explicitly.
-[user]
-  name = "Victor Andrée"
-  useConfigOnly = true
-
-[init]
-  defaultBranch = "main"
+[alias]
+  st = status -sb
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aE>%Creset' --abbrev-commit
+  pretty = log -1 --pretty=fixes
 
 [apply]
   # Tries to fix bad whitespace
   whitespace = fix
 
-[push]
-  # Pushes to identically named branches on the upstream
-  default = current
-
-  # Pushes annotated tags (`--follow-tags`)
-  followTags = true
-
-[merge]
-  defaultToUpstream = true
-
-[fetch]
-  # Prune remote branches on fetch/pull operations
-  prune = true
-
-[mergetool]
-  keepBackup = false
-
-[grep]
-  lineNumber = true
-
-[pretty]
-  line = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
-  compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
-  detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
+[branch]
+  sort = -committerdate
 
 [color "grep"]
   match = cyan bold
@@ -64,10 +38,66 @@
   changed = green
   untracked = cyan
 
-[alias]
-  st = status -sb
-  co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aE>%Creset' --abbrev-commit
+[commit]
+  # Adds in the diff as part of commit message
+  verbose = true
+
+[diff]
+  # Better diff algo. Consider `patience`, too.
+  algorithm = histogram
+  colorMoved = plain
+  # Uses i/w/c (index/working dir/commit) instead of a/b for diff headers
+  mnemonicPrefix = true
+  renames = true
+
+[fetch]
+  # Prune remote branches on fetch/pull operations
+  prune = true
+  pruneTags = true
+  all = true
+
+[grep]
+  lineNumber = true
+
+[init]
+  defaultBranch = main
+
+[merge]
+  defaultToUpstream = true
+
+[mergetool]
+  keepBackup = false
+
+[pretty]
+  line = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
+  compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
+  detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
+
+[push]
+  default = simple
+  autoSetupRemote = true
+
+  # Pushes annotated tags (`--follow-tags`)
+  followTags = true
+
+[rebase]
+  autoStash = true
+  updateRefs = true
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[tag]
+  sort = version:refname
+
+# This configures a default name, but will require configuring an email for
+# every repository/explicitly.
+[user]
+  name = "Victor Andrée"
+  useConfigOnly = true
+
+# Include repository-specific overrides
 
 [includeIf "gitdir:bodil/"]
   path = bodil

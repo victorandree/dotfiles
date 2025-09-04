@@ -24,3 +24,5 @@ Thumbs.db
 # Secrets
 key-file*
 .secrets
+
+**/.claude/settings.local.json
