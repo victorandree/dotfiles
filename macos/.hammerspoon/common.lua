@@ -46,6 +46,18 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "1", function()
   setHidutil()
 end)
 
+hs.hotkey.bind({"cmd", "alt", "shift"}, "V", function()
+  local text = hs.pasteboard.getContents()
+
+  if not text then return end
+
+  -- Replace single newlines that have text before and after
+  -- with spaces, but preserve paragraph breaks (double newlines)
+  local unwrapped = text:gsub("(%S)\n(%S)", "%1 %2")
+
+  insert(unwrapped)
+end)
+
 function insert (x)
   local pasteboardContents = hs.pasteboard.getContents()
   hs.pasteboard.setContents(x)
@@ -64,4 +76,3 @@ function lockApVolume (volume)
     hs.alert.show(trim(output))
   end
 end
-
