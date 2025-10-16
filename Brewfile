@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/core"
 
 brew "aspell"
 brew "fzf"
@@ -18,8 +17,6 @@ brew "xmlstarlet"
 brew "coreutils" if OS.mac?
 brew "findutils" if OS.mac?
 
-tap "homebrew/cask"
-
 # Quicklook plugins for various files
 cask "qlcolorcode" if OS.mac?
 cask "quicklook-csv" if OS.mac?
@@ -35,7 +32,6 @@ cask "rectangle" if OS.mac?
 cask "1password" if OS.mac?
 cask "hammerspoon" if OS.mac?
 
-tap "homebrew/cask-fonts"
 cask 'font-fira-code'
 cask 'font-fira-sans'
 cask 'font-fira-mono'
