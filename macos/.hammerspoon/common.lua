@@ -15,19 +15,23 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
   insert(r)
 end)
 
+-- Cmd+Alt+Ctrl+U: Generate a random UUIDv4
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
   recentuuid = string.lower(hs.host.uuid())
   insert(recentuuid)
 end)
 
+-- Cmd+Alt+Ctrl+I: Reuse the most recently generated UUID
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
   insert(recentuuid)
 end)
 
+-- Cmd+Alt+Ctrl+T: Insert current UTC time
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()
   insert(os.date("!%Y-%m-%dT%H:%M:%S.000Z"))
 end)
 
+-- Cmd+Alt+Ctrl+J: Escape a string for JSON
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
   local pasteboardContents = hs.pasteboard.getContents()
   pasteboardContents = string.gsub(pasteboardContents, '\n', '\\n')
@@ -35,6 +39,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
   insert(pasteboardContents)
 end)
 
+-- Cmd+Alt+Shift+J: Unescape a JSON string
 hs.hotkey.bind({"cmd","alt","shift"}, "J", function()
   local pasteboardContents = hs.pasteboard.getContents()
   pasteboardContents = string.gsub(pasteboardContents, '\\n', '\n')
@@ -46,6 +51,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "1", function()
   setHidutil()
 end)
 
+-- Cmd+Alt+Shift+V: Normalize newlines. Really should normalize all whitespace.
 hs.hotkey.bind({"cmd", "alt", "shift"}, "V", function()
   local text = hs.pasteboard.getContents()
 
