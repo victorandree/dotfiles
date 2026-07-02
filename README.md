@@ -25,8 +25,8 @@ git clone https://github.com/victorandree/dotfiles.git ~/.dotfiles
 # 3. Install utilities (1Password, Ghostty, Hammerspoon, fonts, CLIs, …)
 cd ~/.dotfiles && brew bundle
 
-# 4. Link directories
-ls -d */ | xargs --no-folding stow
+# 4. Link directories (--no-folding is a stow flag; */ expands to the packages)
+stow --no-folding */
 
 # 5. Wire up "local" entrypoints
 # We prefer having "local" files include configuration, because utilities like to add stuff to these locations

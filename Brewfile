@@ -63,9 +63,8 @@ cask "1password-cli" if OS.mac?
 cask "vlc" if OS.mac?
 
 # Quicklook plugins for previewing various file types
-cask "qlcolorcode" if OS.mac?
+cask "syntax-highlight" if OS.mac?   # source + JSON preview (replaces quicklook-json/qlcolorcode)
 cask "quicklook-csv" if OS.mac?
-cask "quicklook-json" if OS.mac?
 cask "qlmarkdown" if OS.mac?
 cask "qlstephen" if OS.mac?          # plaintext preview for extensionless files
 
