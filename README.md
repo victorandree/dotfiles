@@ -47,6 +47,15 @@ git -C ~/.dotfiles remote set-url origin git@github.com:victorandree/dotfiles.gi
 
 # 6c. Apply macOS defaults
 zsh ~/.dotfiles/macos/preferences.zsh
+
+# 6d. Enable Touch ID for sudo (incl. inside tmux via pam_reattach).
+#     Requires the pam-reattach formula (installed by brew bundle).
+#     Keep a second terminal with a valid sudo session open while testing:
+#     a wrong pam_reattach path breaks sudo and is annoying to recover from.
+sudo tee /etc/pam.d/sudo_local >/dev/null <<'PAM'
+auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
+auth       sufficient     pam_tid.so
+PAM
 ```
 
 Finally, grant the apps that need it their permissions in System Settings > Privacy & Security (Hammerspoon and Rectangle need Accessibility). Hammerspoon's `hs` CLI is installed via its own menu (Install Command Line Tool) or comes with the cask.

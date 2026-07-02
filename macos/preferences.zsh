@@ -87,27 +87,15 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
+# Restart only the UI apps whose settings we changed above, so they pick up
+# the new defaults. cfprefsd is killed to flush the preferences cache first.
+# NB: do NOT add "Terminal" (or your terminal emulator) here — killing the
+# host terminal aborts this script mid-run.
+for app in "cfprefsd" \
 	"Dock" \
 	"Finder" \
-	"Google Chrome Canary" \
-	"Google Chrome" \
-	"iCal" \
-	"Mail" \
-	"Messages" \
-	"Opera" \
-	"Photos" \
-	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
-	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
-	"Tweetbot" \
-	"Twitter"; do
+	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
+
+echo "Done. Some changes require a logout/restart to fully take effect."
