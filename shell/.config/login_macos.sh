@@ -17,12 +17,3 @@ fi
 if command -v gdircolors >/dev/null && test -r "$XDG_CONFIG_HOME/dircolors"; then
   eval $(gdircolors "$XDG_CONFIG_HOME/dircolors")
 fi
-
-# This is for quick Clojure start-up
-export BOOT_JVM_OPTIONS="-client
-  -XX:+TieredCompilation
-  -XX:TieredStopAtLevel=1
-  -Xmx2g
-  -XX:+UseConcMarkSweepGC
-  -XX:+CMSClassUnloadingEnabled
-  -Xverify:none"

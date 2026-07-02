@@ -15,9 +15,18 @@ if [ -d "$XDG_DATA_HOME/brew/share/zsh/site-functions" ]; then
   fpath+="$XDG_DATA_HOME/brew/share/zsh/site-functions"
 fi
 
-# Set up autocompletion
+# Set up autocompletion. Rebuild the dump (with the fpath security check) at
+# most once every 24h; otherwise load the cached dump with -C to skip the scan.
 autoload -Uz compinit
-compinit -d "$XDG_DATA_HOME/zcompdump"
+() {
+  setopt local_options extended_glob
+  local dump="$XDG_DATA_HOME/zcompdump"
+  if [[ -n $dump(#qNmh+24) ]]; then
+    compinit -d "$dump"
+  else
+    compinit -C -d "$dump"
+  fi
+}
 
 # Treat only alphanums as word characters (useful for paths)
 autoload -Uz select-word-style

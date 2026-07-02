@@ -20,8 +20,6 @@ if command -v nvim >/dev/null; then
   alias vim='nvim'
 fi
 
-export GREP_OPTIONS="--color=auto"
-
 # Overrides less output to make it more pretty, in particular for manpages
 export LESS_TERMCAP_mb=$'\e[01;31m'
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'
@@ -42,10 +40,5 @@ alias mkdir="mkdir -p"
 uuid () {
   python3 -c 'import uuid; print(uuid.uuid4(), end="")'
 }
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-  eval "$(pyenv init -)"
-fi
 
 source "$XDG_CONFIG_HOME/login_macos.sh"

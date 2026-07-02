@@ -1,12 +1,6 @@
-# TODO This shouldn't rely on brew but should figure this out, somehow
-FZFROOT=$(brew --prefix)/opt/fzf
+# fzf shell integration: completion + key bindings (Ctrl-T, Ctrl-R, Alt-C).
+# `fzf --zsh` (fzf >= 0.48) replaces the old brew-path sourcing. The binary is
+# already on PATH via `brew shellenv`, so there's nothing else to wire up.
+command -v fzf >/dev/null || return 1
 
-[ -d "$FZFROOT" ] || return 1
-
-if [[ ! "$PATH" == *$FZFROOT/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}$FZFROOT/bin"
-fi
-
-[[ $- == *i* ]] && source "$FZFROOT/shell/completion.zsh" 2>/dev/null
-
-source "$FZFROOT/shell/key-bindings.zsh"
+source <(fzf --zsh)
