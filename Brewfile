@@ -56,6 +56,8 @@ cask "iterm2" if OS.mac?
 cask "visual-studio-code" if OS.mac?
 cask "rectangle" if OS.mac?
 cask "hammerspoon" if OS.mac?
+cask "firefox" if OS.mac?
+cask "google-chrome" if OS.mac?
 cask "1password" if OS.mac?
 cask "1password-cli" if OS.mac?
 cask "vlc" if OS.mac?
