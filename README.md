@@ -4,33 +4,52 @@
 
 ## Bootstrap
 
-A new system is bootstrapped by cloning, stowing and activating the dotfiles. Activating involves installing utilities and configuring the shell. To clone, use git and an SSH key for push access.
+A new system is bootstrapped by cloning, stowing and activating the dotfiles. Activating involves installing utilities and configuring the shell.
 
-1. Clone repository (requires git).
-2. Install [Homebrew].
+This repository is **public**, so the first clone needs no authentication — clone over HTTPS. Push access (SSH via the 1Password agent) is set up afterwards, once `brew bundle` has installed 1Password. If you ever fork this private, install `gh` first (`brew install gh && gh auth login`, a browser flow) and clone before the rest.
+
+1. Install [Homebrew] (also installs the Xcode Command Line Tools, i.e. `git`).
+2. Clone the repository over HTTPS.
 3. Install utilities using [Homebrew].
-4. Run stow to setup directories.
-5. Bootstrap other utilities.
+4. Run stow to link directories.
+5. Wire up the "local" entrypoint files.
+6. Enable push access and finish machine setup.
 
 ```shell
-# Clone repository
-git clone git@github.com:victorandree/dotfiles.git ~/.dotfiles
-
-# Install Homebrew
+# 1. Install Homebrew (pulls in the Xcode CLT / git)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install utilities using Homebrew
+# 2. Clone over HTTPS — no key required for a public repo
+git clone https://github.com/victorandree/dotfiles.git ~/.dotfiles
+
+# 3. Install utilities (1Password, Ghostty, Hammerspoon, fonts, CLIs, …)
 cd ~/.dotfiles && brew bundle
 
-# Run stow to setup directories
+# 4. Link directories
 ls -d */ | xargs --no-folding stow
 
-# Bootstrap other utilities
+# 5. Wire up "local" entrypoints
 # We prefer having "local" files include configuration, because utilities like to add stuff to these locations
 echo 'source "$HOME/.config/zsh/zlogin.zsh"' >~/.zlogin
-echo '[include]\n  path = ~/.config/git/default' >~/.config/git/config
+printf '[include]\n  path = ~/.config/git/default\n' >~/.config/git/config
 echo 'source $XDG_CONFIG_HOME/tmux.conf' >~/.tmux.conf
 ```
+
+Then finish machine setup:
+
+```shell
+# 6a. Sign into 1Password, then enable Settings > Developer > "Use the SSH agent".
+#     ~/.ssh/config is stowed and already points IdentityAgent at that agent.
+#     Machine-specific ssh overrides go in ~/.ssh/config.local (not tracked).
+
+# 6b. Switch this clone to SSH so you can push
+git -C ~/.dotfiles remote set-url origin git@github.com:victorandree/dotfiles.git
+
+# 6c. Apply macOS defaults
+zsh ~/.dotfiles/macos/preferences.zsh
+```
+
+Finally, grant the apps that need it their permissions in System Settings > Privacy & Security (Hammerspoon and Rectangle need Accessibility). Hammerspoon's `hs` CLI is installed via its own menu (Install Command Line Tool) or comes with the cask.
 
 ### Configuration
 
