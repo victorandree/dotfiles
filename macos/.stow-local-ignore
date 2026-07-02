@@ -1,1 +1,4 @@
+# A custom .stow-local-ignore replaces stow's built-in defaults, so re-list the
+# common junk we never want stowed (notably .DS_Store) alongside preferences.zsh.
 preferences.zsh
+\.DS_Store
