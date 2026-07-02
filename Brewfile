@@ -1,49 +1,84 @@
-tap "homebrew/bundle"
+# Core Brewfile — the baseline installed on every machine with `brew bundle`.
+#
+# A-la-carte tools (Postgres, Redis, cloud CLIs, media libraries, VMs, extra
+# terminals, etc.) are deliberately NOT listed here. Install them per-machine
+# as needed, e.g.  `brew install postgresql@17 redis pgcli`.
+# Run `brew bundle cleanup` to see what's installed but undeclared.
 
-brew "aspell"
-brew "fzf"
+# --- Shell & CLI essentials ---
 brew "git"
-brew "highlight"
+brew "gh"
+brew "wget"
+brew "ripgrep"
+brew "fzf"
 brew "jq"
-
-# Doesn't work properly.
-# brew "neovim"
-
-brew "pyenv"
+brew "yq"
+brew "httpie"
+brew "tree"
+brew "highlight"
+brew "xmlstarlet"
+brew "aspell"
 brew "stow"
 brew "tmux"
-brew "xmlstarlet"
+brew "neovim"        # your $EDITOR; the old "doesn't work properly" note is stale
+brew "powershell"    # pwsh CLI (also installed as a cask — dedupe with `brew uninstall --cask powershell`)
 
+# --- Version / environment management ---
+brew "fnm"           # Node: reads package.json engines, switches on cd (see .zshrc)
+brew "uv"            # Python: versions + venvs + CLI tools (replaces pyenv & pipx)
+
+# --- Diagrams & document rendering ---
+brew "graphviz"
+brew "d2"
+brew "weasyprint"
+
+# --- Networking / local dev certs ---
+brew "mkcert"
+
+# --- macOS-only ---
 brew "coreutils" if OS.mac?
 brew "findutils" if OS.mac?
 
-# This installs `pam_reattach` which is required to make TouchID work for sudo inside tmux. Update `/etc/pam.d/sudo_local` with the following to enable:
-#
-# auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
-# auth       sufficient     pam_tid.so
-#
-# Note that if the module is missing, sudo will break, and it will be hard to fix because sudo is kind of required to edit the file. Be careful.
-brew "pam_reattach" if OS.mac?
+# Mac App Store CLI, so `brew bundle` can also install MAS apps, e.g.:
+#   mas "Thing", id: 1234567890
+brew "mas" if OS.mac?
 
-# Quicklook plugins for various files
+# pam-reattach makes TouchID work for sudo inside tmux. After install, add to
+# /etc/pam.d/sudo_local:
+#   auth       optional       /opt/homebrew/lib/pam/pam_reattach.so
+#   auth       sufficient     pam_tid.so
+# Warning: a wrong module path breaks sudo and is hard to fix. Be careful.
+brew "pam-reattach" if OS.mac?
+
+# --- GUI applications ---
+cask "ghostty" if OS.mac?
+cask "iterm2" if OS.mac?
+cask "visual-studio-code" if OS.mac?
+cask "rectangle" if OS.mac?
+cask "hammerspoon" if OS.mac?
+cask "1password" if OS.mac?
+cask "1password-cli" if OS.mac?
+cask "vlc" if OS.mac?
+
+# Quicklook plugins for previewing various file types
 cask "qlcolorcode" if OS.mac?
 cask "quicklook-csv" if OS.mac?
 cask "quicklook-json" if OS.mac?
 cask "qlmarkdown" if OS.mac?
+cask "qlstephen" if OS.mac?          # plaintext preview for extensionless files
 
-# Quicklook plaintext if no extension
-cask "qlstephen" if OS.mac?
-
-cask "visual-studio-code" if OS.mac?
-cask "iterm2" if OS.mac?
-cask "rectangle" if OS.mac?
-cask "1password" if OS.mac?
-cask "hammerspoon" if OS.mac?
-
-cask 'font-fira-code'
-cask 'font-fira-sans'
-cask 'font-fira-mono'
-cask 'font-source-code-pro'
-cask 'font-iosevka'
-cask 'font-fontawesome'
-cask 'font-input'
+# --- Fonts ---
+cask "font-iosevka-term-nerd-font" if OS.mac?   # used by Ghostty (ghostty/config)
+cask "font-iosevka" if OS.mac?                  # base Iosevka + Iosevka Fixed/Term
+cask "font-iosevka-aile" if OS.mac?             # quasi-proportional sans companion
+cask "font-iosevka-etoile" if OS.mac?           # proportional slab-serif companion
+cask "font-fira-code" if OS.mac?
+cask "font-fira-sans" if OS.mac?
+cask "font-fira-mono" if OS.mac?
+cask "font-source-code-pro" if OS.mac?
+cask "font-fontawesome" if OS.mac?
+cask "font-input" if OS.mac?
+cask "font-roboto" if OS.mac?
+cask "font-josefin-sans" if OS.mac?
+cask "font-ia-writer-mono" if OS.mac?
+cask "font-ia-writer-quattro" if OS.mac?
